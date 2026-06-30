@@ -33,7 +33,7 @@
   .muted{color:var(--ink-soft)}
 
   /* version banner */
-  .versionbar{background:var(--slate);color:#fff;font-size:12.5px;font-weight:600;text-align:center;padding:8px 16px;letter-spacing:.01em}
+  .versionbar{background:var(--slate);color:#fff;font-size:12.5px;font-weight:600;text-align:center;padding:8px 16px;letter-spacing:.01em;position:sticky;top:0;z-index:70}
   .versionbar b{color:#FF9A4D;font-weight:800}
   /* nav */
   header.nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
@@ -299,7 +299,7 @@
 <body>
 
 <!-- VERSION: bump on each update -->
-<div class="versionbar"><b>PROTOTYPE</b> · v0.16 · Jun 30 2026 — concept for discussion only, not an official Alation page</div>
+<div class="versionbar"><b>PROTOTYPE</b> · v0.17 · Jun 30 2026 — concept for discussion only, not an official Alation page</div>
 
 <header class="nav">
   <div class="wrap nav-inner">
@@ -810,6 +810,12 @@ renderReel();
 render();
 // fill static brand marks (hero constellation, testimonial)
 document.querySelectorAll('[data-logo]').forEach(el=>{const s=LOGOS[el.dataset.logo];if(s)el.innerHTML=s;});
+
+// keep the sticky prototype bar + nav stacked at the top at any width
+function setNavTop(){const vb=document.querySelector('.versionbar');const nav=document.querySelector('header.nav');if(vb&&nav)nav.style.top=vb.offsetHeight+'px';}
+setNavTop();
+window.addEventListener('resize',setNavTop);
+window.addEventListener('load',setNavTop);
 </script>
 </body>
 </html>
