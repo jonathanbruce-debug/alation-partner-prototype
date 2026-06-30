@@ -164,6 +164,8 @@
   .badge.si{background:#EFEAFF;color:#7C3AED}
   .badge.reseller{background:#E9F9EF;color:#16A34A}
   .logo-sq{width:46px;height:46px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:18px}
+  .logo-sq svg{width:60%;height:60%;display:block}
+  .enode .lg svg{width:74%;height:74%;display:block}
   .card h3{font-size:19px}
   .card p{font-size:14px;color:var(--ink-soft);flex:1}
   .card .meta{display:flex;gap:6px;flex-wrap:wrap}
@@ -297,7 +299,7 @@
 <body>
 
 <!-- VERSION: bump on each update -->
-<div class="versionbar"><b>PROTOTYPE</b> · v0.14 · Jun 30 2026 — concept for discussion only, not an official Alation page</div>
+<div class="versionbar"><b>PROTOTYPE</b> · v0.15 · Jun 30 2026 — concept for discussion only, not an official Alation page</div>
 
 <header class="nav">
   <div class="wrap nav-inner">
@@ -354,14 +356,14 @@
         <line class="eco-line tech" x1="50" y1="50" x2="14" y2="33"/>
       </svg>
       <div class="enode center" style="left:50%;top:50%"><span>Alation AIOS™</span></div>
-      <div class="enode si" style="left:50%;top:24%;animation-delay:0s"><span class="lg" style="background:#D04A02">pwc</span>PwC</div>
-      <div class="enode si" style="left:28%;top:68%;animation-delay:.8s"><span class="lg" style="background:#A100FF">›</span>Accenture</div>
-      <div class="enode si" style="left:72%;top:68%;animation-delay:1.6s"><span class="lg" style="background:#0070AD">C</span>Capgemini</div>
-      <div class="enode tech" style="left:50%;top:7%;animation-delay:.4s"><span class="lg" style="background:#29B5E8">❄</span>Snowflake</div>
-      <div class="enode tech" style="left:86%;top:33%;animation-delay:1.2s"><span class="lg" style="background:#FF3621">D</span>Databricks</div>
-      <div class="enode tech" style="left:84%;top:80%;animation-delay:2s"><span class="lg" style="background:#FF9900">a</span>AWS</div>
-      <div class="enode tech" style="left:16%;top:80%;animation-delay:.6s"><span class="lg" style="background:#00A1E0">☁</span>Salesforce</div>
-      <div class="enode tech" style="left:14%;top:33%;animation-delay:1.4s"><span class="lg" style="background:#0078D4">⊞</span>Azure</div>
+      <div class="enode si" style="left:50%;top:24%;animation-delay:0s"><span class="lg" style="background:#D04A02" data-logo="PwC"></span>PwC</div>
+      <div class="enode si" style="left:28%;top:68%;animation-delay:.8s"><span class="lg" style="background:#A100FF" data-logo="Accenture"></span>Accenture</div>
+      <div class="enode si" style="left:72%;top:68%;animation-delay:1.6s"><span class="lg" style="background:#0070AD" data-logo="Capgemini"></span>Capgemini</div>
+      <div class="enode tech" style="left:50%;top:7%;animation-delay:.4s"><span class="lg" style="background:#29B5E8" data-logo="Snowflake"></span>Snowflake</div>
+      <div class="enode tech" style="left:86%;top:33%;animation-delay:1.2s"><span class="lg" style="background:#FF3621" data-logo="Databricks"></span>Databricks</div>
+      <div class="enode tech" style="left:84%;top:80%;animation-delay:2s"><span class="lg" style="background:#FF9900" data-logo="AWS"></span>AWS</div>
+      <div class="enode tech" style="left:16%;top:80%;animation-delay:.6s"><span class="lg" style="background:#00A1E0" data-logo="Salesforce"></span>Salesforce</div>
+      <div class="enode tech" style="left:14%;top:33%;animation-delay:1.4s"><span class="lg" style="background:#0078D4" data-logo="Azure"></span>Azure</div>
       <div class="eco-legend"><span><span class="d" style="background:#FF8A4C"></span>System Integrators</span><span><span class="d" style="background:#60A5FA"></span>Technology partners</span></div>
     </div>
   </div>
@@ -441,7 +443,7 @@
       <span class="tmark">&ldquo;</span>
       <blockquote>PwC Canada has been helping financial institutions navigate complex regulatory change for decades. This partnership builds on our existing technology capabilities by accelerating how we operationalize that expertise at scale — bringing proven solutions to new industries and evolving regulatory frameworks.</blockquote>
       <div class="tattr">
-        <div class="logo-sq" style="background:#D04A02">pwc</div>
+        <div class="logo-sq" style="background:#D04A02" data-logo="PwC"></div>
         <div class="who">
           <strong>Prithviraj Thakur</strong>
           <span>Partner &amp; Data Management Practice Lead, PwC Canada</span>
@@ -724,6 +726,20 @@ const partners = [
 let curType="si", curInd="all";
 const badgeText={tech:"Technology",si:"System Integrator"};
 
+// Brand marks (white-on-brand-color SVG wordmarks/logomarks)
+const LOGOS={
+  "PwC":'<svg viewBox="0 0 24 24"><text x="12" y="15.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="11" fill="#fff" letter-spacing="-.5">pwc</text></svg>',
+  "Accenture":'<svg viewBox="0 0 24 24"><path d="M7 5L16 12L7 19" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  "Capgemini":'<svg viewBox="0 0 24 24"><path d="M5 18C9 7 15 6 19 7.5C13 8.5 10 12.5 9 18Z" fill="#fff"/></svg>',
+  "Snowflake":'<svg viewBox="0 0 24 24" stroke="#fff" stroke-width="1.7" stroke-linecap="round"><line x1="12" y1="3.5" x2="12" y2="20.5"/><line x1="4.6" y1="7.75" x2="19.4" y2="16.25"/><line x1="4.6" y1="16.25" x2="19.4" y2="7.75"/></svg>',
+  "Databricks":'<svg viewBox="0 0 24 24" fill="#fff"><path d="M5 8l7-3.2 7 3.2-7 3.2z"/><path d="M5 12.8l7-3.2 7 3.2-7 3.2z" opacity=".7"/><path d="M5 17.6l7-3.2 7 3.2-7 3.2z" opacity=".5"/></svg>',
+  "AWS":'<svg viewBox="0 0 24 24"><text x="12" y="12" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="8.5" fill="#fff">aws</text><path d="M6 16c4 2.6 8 2.6 12 0" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M16.2 15.1l2.1.6-.7 2" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  "Salesforce":'<svg viewBox="0 0 24 24" fill="#fff"><path d="M16.8 17.5H8.4a3.7 3.7 0 0 1-1-7.2 4.3 4.3 0 0 1 8-1.2 3.1 3.1 0 0 1 1.4 8.4z"/></svg>',
+  "Azure":'<svg viewBox="0 0 24 24" fill="#fff"><path d="M10.6 4.5L4.5 19.5h4.2l1.1-3 5.6 1.6z"/><path d="M12.2 7.5l6.3 12H10.6l3.1-6.6z" opacity=".7"/></svg>'
+};
+LOGOS["Microsoft Azure"]=LOGOS["Azure"];
+const mark=p=>LOGOS[p.name]||p.abbr;
+
 function setType(el){curType=el.dataset.type;document.querySelectorAll('#typeFilters .chip').forEach(c=>c.classList.remove('active'));el.classList.add('active');render();}
 function setInd(el){curInd=el.dataset.ind;document.querySelectorAll('#indFilters .chip').forEach(c=>c.classList.remove('active'));el.classList.add('active');render();}
 
@@ -742,7 +758,7 @@ function render(){
   grid.innerHTML=list.map((p,i)=>`
     <div class="card" onclick="openModal(${partners.indexOf(p)})">
       <div class="top">
-        <div class="logo-sq" style="background:${p.color}">${p.abbr}</div>
+        <div class="logo-sq" style="background:${p.color}">${mark(p)}</div>
         <span class="badge ${p.type}">${badgeText[p.type]}</span>
       </div>
       <h3>${p.name} ${p.launch?'<span class="tierbadge launch">★ Launch</span>':''}${p.tier?`<span class="tierbadge ${p.tier}">${p.tier}</span>`:''}</h3>
@@ -755,7 +771,7 @@ function render(){
 function openModal(i){
   const p=partners[i];
   document.getElementById('modalBody').innerHTML=`
-    <div class="logo-sq" style="background:${p.color}">${p.abbr}</div>
+    <div class="logo-sq" style="background:${p.color}">${mark(p)}</div>
     <span class="badge ${p.type}">${badgeText[p.type]}</span>
     ${p.launch?'<span class="tierbadge launch" style="margin-left:6px">★ Launch Partner</span>':''}
     ${p.tier?`<span class="tierbadge ${p.tier}" style="margin-left:6px">${p.tier} tier</span>`:''}
@@ -776,7 +792,7 @@ function renderReel(){
   const launch=shuffle(partners.filter(p=>p.launch));
   document.getElementById('reel').innerHTML=launch.map(p=>`
     <div class="reelcard" onclick="openModal(${partners.indexOf(p)})">
-      <div class="reeltop"><div class="logo-sq" style="background:${p.color}">${p.abbr}</div><span class="launchpill">★ Launch Partner</span></div>
+      <div class="reeltop"><div class="logo-sq" style="background:${p.color}">${mark(p)}</div><span class="launchpill">★ Launch Partner</span></div>
       <h3>${p.name}</h3>
       <p>${p.desc.replace(/^Launch preferred SI\. /,'')}</p>
       <div class="reelmeta">${p.tags.filter(t=>t!=='Launch Partner').join(' · ')}</div>
@@ -791,6 +807,8 @@ function renderReel(){
 
 renderReel();
 render();
+// fill static brand marks (hero constellation, testimonial)
+document.querySelectorAll('[data-logo]').forEach(el=>{const s=LOGOS[el.dataset.logo];if(s)el.innerHTML=s;});
 </script>
 </body>
 </html>
