@@ -264,6 +264,30 @@
   .modal h3{font-size:22px}
   .modal .x{position:absolute;top:16px;right:18px;font-size:24px;color:var(--slate-30);cursor:pointer;background:none;border:none}
   .modal .logo-sq{margin-bottom:14px}
+
+  /* coming soon / pipeline */
+  .csgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:34px}
+  @media(max-width:760px){.csgrid{grid-template-columns:1fr}}
+  .cscard{position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 26px 24px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:14px;overflow:hidden}
+  .cscard::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:repeating-linear-gradient(45deg,var(--orange) 0 10px,#FFC09A 10px 20px)}
+  .csbadge{position:absolute;top:16px;right:16px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--orange);background:var(--orange-soft);padding:5px 11px;border-radius:999px}
+  .csbadge .blink{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--orange);margin-right:6px;vertical-align:middle;animation:csblink 1.6s ease-in-out infinite}
+  @keyframes csblink{0%,100%{opacity:1}50%{opacity:.25}}
+  .cstop{display:flex;align-items:center;gap:13px;margin-top:8px}
+  .cstop h3{font-size:22px}
+  .csrole{font-size:12.5px;font-weight:700;color:var(--ink-soft)}
+  .cscard p{font-size:14px;color:var(--ink-soft);line-height:1.5;flex:1;margin:0}
+  .cstrack{display:flex;gap:6px;flex-wrap:wrap}
+  .cstep{display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;color:var(--slate-30);background:var(--bg-soft);border:1px solid var(--line);padding:6px 11px;border-radius:999px}
+  .csdot{width:8px;height:8px;border-radius:50%;background:var(--slate-30);flex:none}
+  .cstep.done{color:var(--slate-2)}
+  .cstep.done .csdot{background:#16A34A}
+  .cstep.active{color:var(--orange);border-color:var(--orange);background:var(--orange-soft)}
+  .cstep.active .csdot{background:var(--orange);box-shadow:0 0 0 3px rgba(242,92,5,.18)}
+  .csmeta{font-size:12px;font-weight:700;color:var(--slate-30);letter-spacing:.03em}
+  .csinvite{border-style:dashed;box-shadow:none;background:transparent}
+  .csinvite::before{display:none}
+  .csinvite h3,.csinvite .csrole{color:var(--slate-30)}
   .modal .row{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
   .modal p{font-size:14.5px;color:var(--ink-soft)}
 </style>
@@ -271,7 +295,7 @@
 <body>
 
 <!-- VERSION: bump on each update -->
-<div class="versionbar"><b>PROTOTYPE</b> · v0.12 · Jun 30 2026 — concept for discussion only, not an official Alation page</div>
+<div class="versionbar"><b>PROTOTYPE</b> · v0.13 · Jun 30 2026 — concept for discussion only, not an official Alation page</div>
 
 <header class="nav">
   <div class="wrap nav-inner">
@@ -363,6 +387,48 @@
       <p class="muted">Our first preferred system integrators for the Alation AIOS™ — co-investing in vertical accelerators, joint go-to-market, and certified delivery practices. The next cohort opens soon.</p>
     </div>
     <div class="reel" id="reel"></div>
+  </div>
+</section>
+
+<!-- COMING SOON / PIPELINE -->
+<section class="section" id="coming" style="background:linear-gradient(180deg,#FFFFFF,#F7F9FB);padding-top:56px;padding-bottom:84px">
+  <div class="wrap">
+    <div style="max-width:760px">
+      <span class="eyebrow">Coming soon</span>
+      <h2>Next into the network</h2>
+      <p class="muted">System integrators we're actively onboarding to the Alation AIOS™. These partnerships are works in progress — building accelerators, completing certification, and finalizing go-to-market ahead of launch.</p>
+    </div>
+    <div class="csgrid">
+      <div class="cscard">
+        <div class="csbadge"><span class="blink"></span>Coming soon</div>
+        <div class="cstop">
+          <div class="logo-sq" style="background:#2E2E38">EY</div>
+          <div>
+            <h3>EY</h3>
+            <span class="csrole">Premier candidate · Risk &amp; regulatory advisory</span>
+          </div>
+        </div>
+        <p>Regulatory and risk advisory engagements aligned to named accounts, on a pathway to Preferred. Joint accelerators in scoping now.</p>
+        <div class="cstrack" aria-label="Onboarding progress: Enablement stage">
+          <div class="cstep done"><span class="csdot"></span>Scoping</div>
+          <div class="cstep active"><span class="csdot"></span>Enablement</div>
+          <div class="cstep"><span class="csdot"></span>Certification</div>
+          <div class="cstep"><span class="csdot"></span>Launch</div>
+        </div>
+        <div class="csmeta">Targeting launch · H2 FY27</div>
+      </div>
+      <div class="cscard csinvite">
+        <div class="cstop">
+          <div class="logo-sq ph">+</div>
+          <div>
+            <h3>Your firm here</h3>
+            <span class="csrole">Applications open</span>
+          </div>
+        </div>
+        <p>Building a vertical accelerator on the AIOS™? Join the next cohort of preferred SIs being onboarded to the network.</p>
+        <button class="btn btn-ghost" style="align-self:flex-start" onclick="document.getElementById('join').scrollIntoView()">Register interest</button>
+      </div>
+    </div>
   </div>
 </section>
 
