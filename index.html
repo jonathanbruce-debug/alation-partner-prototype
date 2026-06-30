@@ -82,6 +82,8 @@
   .trustbar .wrap{display:flex;align-items:center;gap:30px;padding:22px 28px;flex-wrap:wrap}
   .trustbar .label{font-size:13px;font-weight:700;color:var(--slate-30);text-transform:uppercase;letter-spacing:.1em}
   .pill-logo{font-weight:800;color:var(--slate-2);font-size:17px;opacity:.7}
+  .pill-logo.soon{opacity:.55}
+  .pill-logo.soon em{font-style:normal;font-size:10px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--orange);background:var(--orange-soft);padding:2px 7px;border-radius:999px;margin-left:6px;vertical-align:middle}
 
   /* launch reel */
   .reel{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:34px}
@@ -295,7 +297,7 @@
 <body>
 
 <!-- VERSION: bump on each update -->
-<div class="versionbar"><b>PROTOTYPE</b> · v0.13 · Jun 30 2026 — concept for discussion only, not an official Alation page</div>
+<div class="versionbar"><b>PROTOTYPE</b> · v0.14 · Jun 30 2026 — concept for discussion only, not an official Alation page</div>
 
 <header class="nav">
   <div class="wrap nav-inner">
@@ -369,12 +371,11 @@
 <div class="trustbar">
   <div class="wrap">
     <span class="label">Trusted alongside</span>
+    <span class="pill-logo">AWS</span>
     <span class="pill-logo">Snowflake</span>
     <span class="pill-logo">Databricks</span>
-    <span class="pill-logo">AWS</span>
     <span class="pill-logo">Salesforce</span>
-    <span class="pill-logo">Tableau</span>
-    <span class="pill-logo">Deloitte</span>
+    <span class="pill-logo soon">Microsoft <em>soon</em></span>
   </div>
 </div>
 
