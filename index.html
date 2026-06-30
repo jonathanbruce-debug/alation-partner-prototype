@@ -271,7 +271,7 @@
 <body>
 
 <!-- VERSION: bump on each update -->
-<div class="versionbar"><b>PROTOTYPE</b> · v0.10 · Jun 30 2026 — concept for discussion only, not an official Alation page</div>
+<div class="versionbar"><b>PROTOTYPE</b> · v0.11 · Jun 30 2026 — concept for discussion only, not an official Alation page</div>
 
 <header class="nav">
   <div class="wrap nav-inner">
@@ -301,7 +301,7 @@
       </div>
       <div class="hero-stats">
         <div><div class="n">3</div><div class="l">Preferred global SIs</div></div>
-        <div><div class="n">4</div><div class="l">Priority verticals</div></div>
+        <div><div class="n">7</div><div class="l">Industries served</div></div>
         <div><div class="n">100+</div><div class="l">Connected systems</div></div>
       </div>
     </div>
@@ -453,11 +453,14 @@
     </div>
     <div class="filters" id="indFilters" style="margin-top:10px">
       <button class="chip active" data-ind="all" onclick="setInd(this)">All industries</button>
+      <button class="chip" data-ind="Cross Industry" onclick="setInd(this)">Cross Industry</button>
       <button class="chip" data-ind="Financial Services" onclick="setInd(this)">Financial Services</button>
+      <button class="chip" data-ind="Travel &amp; Transportation" onclick="setInd(this)">Travel &amp; Transportation</button>
       <button class="chip" data-ind="Healthcare" onclick="setInd(this)">Healthcare</button>
-      <button class="chip" data-ind="Retail" onclick="setInd(this)">Retail</button>
-      <button class="chip" data-ind="Public Sector" onclick="setInd(this)">Public Sector</button>
-      <button class="chip" data-ind="Manufacturing" onclick="setInd(this)">Manufacturing</button>
+      <button class="chip" data-ind="Retail and Consumer Goods" onclick="setInd(this)">Retail and Consumer Goods</button>
+      <button class="chip" data-ind="Telecommunications" onclick="setInd(this)">Telecommunications</button>
+      <button class="chip" data-ind="Technology" onclick="setInd(this)">Technology</button>
+      <button class="chip" data-ind="Media" onclick="setInd(this)">Media</button>
     </div>
 
     <p class="count" id="count" style="margin:18px 0"></p>
@@ -480,12 +483,12 @@
       <div class="ai-card">
         <div class="ic">⚙️</div>
         <h3>Co-built solution accelerators</h3>
-        <p>Vertical accelerators on Agent Studio + SI partner MCP agents — E-21 today (E-23 next), DORA, Patient 360, AML — deployable on day one, neither party can build alone.</p>
+        <p>Vertical accelerators on Agent Studio + SI partner MCP agents — E-21 today (E-23 next), plus cross-industry DORA and AML accelerators — deployable on day one, neither party can build alone.</p>
       </div>
       <div class="ai-card">
         <div class="ic">🚀</div>
         <h3>Scale through preferred SIs</h3>
-        <p>PwC, Accenture, and Capgemini co-deliver the AIOS™ into FSI, Healthcare, Energy, and Transportation — and the fastest-growing enterprise AI budgets.</p>
+        <p>PwC, Accenture, and Capgemini co-deliver the AIOS™ across Financial Services and cross-industry priorities — and the fastest-growing enterprise AI budgets.</p>
       </div>
     </div>
   </div>
@@ -497,7 +500,7 @@
     <div style="max-width:720px">
       <span class="eyebrow">Depth over breadth</span>
       <h2>Solutions to elevate every regulated enterprise</h2>
-      <p class="muted">Outcome-led accelerators for the people who run mission-critical data — risk officers, clinicians, grid operators, and fleet leaders. Built once on Agent Studio, delivered by our SIs across their entire book of business.</p>
+      <p class="muted">Outcome-led accelerators for the people who run mission-critical data — starting with financial-services risk officers and cross-industry data leaders. Built once on Agent Studio, delivered by our SIs across their entire book of business.</p>
     </div>
     <div class="vgrid">
       <div class="vcard">
@@ -508,24 +511,10 @@
         </div>
       </div>
       <div class="vcard">
-        <div class="vbanner" style="background:linear-gradient(135deg,#16A34A,#0F766E)"><div class="sheen"></div><h3>Healthcare &amp; Life Sciences</h3></div>
+        <div class="vbanner" style="background:linear-gradient(135deg,#0070AD,#1E3A8A)"><div class="sheen"></div><h3>Cross Industry</h3></div>
         <div class="vbody">
-          <p class="voutcome">Deliver safer, more personalized care with trusted clinical data and privacy built in — from Patient 360 to population health.</p>
-          <div class="vmeta"><p class="vsi">Delivered with <b>Accenture · PwC</b></p><span class="vaccel">Patient 360 Accelerator</span></div>
-        </div>
-      </div>
-      <div class="vcard">
-        <div class="vbanner" style="background:linear-gradient(135deg,#F59E0B,#C2410C)"><div class="sheen"></div><h3>Energy &amp; Utilities</h3></div>
-        <div class="vbody">
-          <p class="voutcome">Power the clean-energy transition with grid, emissions, and ESG data you can act on — and prove compliance with full lineage.</p>
-          <div class="vmeta"><p class="vsi">Delivered with <b>PwC · Capgemini</b></p><span class="vaccel">Grid &amp; ESG Accelerator</span></div>
-        </div>
-      </div>
-      <div class="vcard">
-        <div class="vbanner" style="background:linear-gradient(135deg,#7C3AED,#5B21B6)"><div class="sheen"></div><h3>Transportation &amp; Logistics</h3></div>
-        <div class="vbody">
-          <p class="voutcome">Keep fleets moving with trusted data for safety, predictive maintenance, and customer service across the whole network.</p>
-          <div class="vmeta"><p class="vsi">Delivered with <b>Capgemini · Accenture</b></p><span class="vaccel">Fleet Ops Accelerator</span></div>
+          <p class="voutcome">Govern trusted data across any industry — data governance, DORA / financial resilience, and Retail &amp; Consumer Goods accelerators that scale the AIOS™ worldwide.</p>
+          <div class="vmeta"><p class="vsi">Delivered with <b>Capgemini</b></p><span class="vaccel">Cross-Industry Accelerators</span></div>
         </div>
       </div>
     </div>
@@ -649,19 +638,19 @@
 
 <script>
 const partners = [
-  {name:"Snowflake", type:"tech", color:"#29B5E8", abbr:"❄", desc:"Deep data governance integration and self-service analytics on the Snowflake Data Cloud.", tags:["Cloud Data Platform","Governance"], ind:["Financial Services","Retail","Healthcare"], ai:true, quote:"Alation makes it fast and easy to govern critical data in Snowflake. — Sunny Bedi, CIO & CDO"},
-  {name:"Databricks", type:"tech", color:"#FF3621", abbr:"D", desc:"Make all data ready for analytics and rapidly adopt machine learning across the organization.", tags:["Lakehouse","ML/AI"], ind:["Technology","Manufacturing"], ai:true, quote:"Empower data-driven decisions and adopt ML to outpace the competition."},
-  {name:"AWS", type:"tech", color:"#FF9900", abbr:"a", desc:"Accelerate data intelligence and drive better insights leveraging Alation on AWS.", tags:["Cloud","Data Modernization"], ind:["Public Sector","Financial Services"], ai:true, quote:"We are delighted to help customers accelerate data intelligence. — Ken Chestnut, AWS"},
-  {name:"Salesforce", type:"tech", color:"#00A1E0", abbr:"☁", desc:"Unify CRM enterprise metadata, giving Data Cloud users access to metadata from 100+ systems.", tags:["CRM","Connector"], ind:["Retail","Financial Services"], ai:true, quote:"Bring metadata from 100+ systems into Salesforce Data Cloud."},
-  {name:"Tableau", type:"tech", color:"#1F77B4", abbr:"T", desc:"Best-in-class visualization powered by trusted, governed data from the Alation catalog.", tags:["Analytics","Visualization"], ind:["Retail","Healthcare"], ai:false, quote:""},
-  {name:"Microsoft Azure", type:"tech", color:"#0078D4", abbr:"⊞", desc:"Govern and discover data across Azure data services with active metadata.", tags:["Cloud","Governance"], ind:["Public Sector","Manufacturing"], ai:true, quote:""},
+  {name:"Snowflake", type:"tech", color:"#29B5E8", abbr:"❄", desc:"Deep data governance integration and self-service analytics on the Snowflake Data Cloud.", tags:["Cloud Data Platform","Governance"], ind:["Financial Services","Retail and Consumer Goods","Healthcare"], ai:true, quote:"Alation makes it fast and easy to govern critical data in Snowflake. — Sunny Bedi, CIO & CDO"},
+  {name:"Databricks", type:"tech", color:"#FF3621", abbr:"D", desc:"Make all data ready for analytics and rapidly adopt machine learning across the organization.", tags:["Lakehouse","ML/AI"], ind:["Technology","Telecommunications","Media"], ai:true, quote:"Empower data-driven decisions and adopt ML to outpace the competition."},
+  {name:"AWS", type:"tech", color:"#FF9900", abbr:"a", desc:"Accelerate data intelligence and drive better insights leveraging Alation on AWS.", tags:["Cloud","Data Modernization"], ind:["Cross Industry","Financial Services","Technology"], ai:true, quote:"We are delighted to help customers accelerate data intelligence. — Ken Chestnut, AWS"},
+  {name:"Salesforce", type:"tech", color:"#00A1E0", abbr:"☁", desc:"Unify CRM enterprise metadata, giving Data Cloud users access to metadata from 100+ systems.", tags:["CRM","Connector"], ind:["Retail and Consumer Goods","Financial Services","Media"], ai:true, quote:"Bring metadata from 100+ systems into Salesforce Data Cloud."},
+  {name:"Tableau", type:"tech", color:"#1F77B4", abbr:"T", desc:"Best-in-class visualization powered by trusted, governed data from the Alation catalog.", tags:["Analytics","Visualization"], ind:["Retail and Consumer Goods","Healthcare"], ai:false, quote:""},
+  {name:"Microsoft Azure", type:"tech", color:"#0078D4", abbr:"⊞", desc:"Govern and discover data across Azure data services with active metadata.", tags:["Cloud","Governance"], ind:["Technology","Telecommunications"], ai:true, quote:""},
   {name:"dbt Labs", type:"tech", color:"#FF694B", abbr:"d", desc:"Pipeline and transformation lineage that ensures the right data gets moved and trusted.", tags:["Transformation","Lineage"], ind:["Technology"], ai:false, quote:""},
-  {name:"PwC", type:"si", tier:"Strategic", launch:true, color:"#D04A02", abbr:"pwc", desc:"Launch preferred SI. Co-built the E-21 regulatory accelerator (Agent Studio + FSI Glossary + Policy Pack) for Canadian and US banking — with E-23 to follow.", tags:["Launch Partner","FSI","E-21 Accelerator"], ind:["Financial Services","Healthcare","Manufacturing"], ai:true, quote:"Joint Alation + PwC E-21 solution: 70%+ reduction in manual compliance effort with full CDE traceability for OSFI."},
-  {name:"Accenture", type:"si", tier:"Strategic", launch:true, color:"#A100FF", abbr:"›", desc:"Launch preferred SI. Global co-sell across FSI, Healthcare, Retail and Public Sector with vertical accelerators and exec alignment.", tags:["Launch Partner","AI Transformation","Healthcare"], ind:["Financial Services","Healthcare","Retail","Public Sector"], ai:true, quote:"JBP in progress — 2+ accelerators, field co-sell, executive alignment across CNA, Truist, NFCU and Vistra."},
-  {name:"Capgemini", type:"si", tier:"Strategic", launch:true, color:"#0070AD", abbr:"C", desc:"Launch preferred SI. A cross-industry offering deployed worldwide — data governance, DORA / financial resilience, and Retail/CPG accelerators built on the AIOS™.", tags:["Launch Partner","Cross-Industry","Worldwide"], ind:["Financial Services","Retail","Manufacturing","Healthcare","Public Sector"], ai:true, quote:"Activating H1 FY27 — cross-industry accelerators and a global go-to-market under the AIOS™ narrative."},
-  {name:"Deloitte", type:"si", tier:"Premier", color:"#86BC25", abbr:"D", desc:"Premier candidate. Strategy, change management, and implementation services on a pathway to Preferred designation.", tags:["Premier","Consulting","Data Strategy"], ind:["Financial Services","Public Sector","Healthcare"], ai:true, quote:""},
-  {name:"EY", type:"si", tier:"Premier", color:"#2E2E38", abbr:"EY", desc:"Premier candidate (selective). Regulatory and risk advisory engagements aligned to named accounts.", tags:["Premier","Risk Advisory"], ind:["Financial Services","Public Sector"], ai:false, quote:""},
-  {name:"Slalom", type:"si", tier:"Select", color:"#0C62FB", abbr:"S", desc:"Select partner — Healthcare practice active. Certified delivery driving self-service analytics and data culture adoption.", tags:["Select","Healthcare","Enablement"], ind:["Retail","Healthcare"], ai:false, quote:""},
+  {name:"PwC", type:"si", tier:"Strategic", launch:true, color:"#D04A02", abbr:"pwc", desc:"Launch preferred SI. Co-built the E-21 regulatory accelerator (Agent Studio + FSI Glossary + Policy Pack) for Canadian and US banking — with E-23 to follow.", tags:["Launch Partner","FSI","E-21 Accelerator"], ind:["Financial Services","Healthcare"], ai:true, quote:"Joint Alation + PwC E-21 solution: 70%+ reduction in manual compliance effort with full CDE traceability for OSFI."},
+  {name:"Accenture", type:"si", tier:"Strategic", launch:true, color:"#A100FF", abbr:"›", desc:"Launch preferred SI. Global co-sell across FSI, Healthcare, Retail and Public Sector with vertical accelerators and exec alignment.", tags:["Launch Partner","AI Transformation","Healthcare"], ind:["Financial Services","Healthcare","Retail and Consumer Goods","Travel & Transportation","Cross Industry"], ai:true, quote:"JBP in progress — 2+ accelerators, field co-sell, executive alignment across CNA, Truist, NFCU and Vistra."},
+  {name:"Capgemini", type:"si", tier:"Strategic", launch:true, color:"#0070AD", abbr:"C", desc:"Launch preferred SI. A cross-industry offering deployed worldwide — data governance, DORA / financial resilience, and Retail/CPG accelerators built on the AIOS™.", tags:["Launch Partner","Cross-Industry","Worldwide"], ind:["Cross Industry","Financial Services","Retail and Consumer Goods","Travel & Transportation"], ai:true, quote:"Activating H1 FY27 — cross-industry accelerators and a global go-to-market under the AIOS™ narrative."},
+  {name:"Deloitte", type:"si", tier:"Premier", color:"#86BC25", abbr:"D", desc:"Premier candidate. Strategy, change management, and implementation services on a pathway to Preferred designation.", tags:["Premier","Consulting","Data Strategy"], ind:["Financial Services","Healthcare","Cross Industry"], ai:true, quote:""},
+  {name:"EY", type:"si", tier:"Premier", color:"#2E2E38", abbr:"EY", desc:"Premier candidate (selective). Regulatory and risk advisory engagements aligned to named accounts.", tags:["Premier","Risk Advisory"], ind:["Financial Services","Cross Industry"], ai:false, quote:""},
+  {name:"Slalom", type:"si", tier:"Select", color:"#0C62FB", abbr:"S", desc:"Select partner — Healthcare practice active. Certified delivery driving self-service analytics and data culture adoption.", tags:["Select","Healthcare","Enablement"], ind:["Retail and Consumer Goods","Healthcare"], ai:false, quote:""},
   {name:"Archetype Consulting", type:"si", tier:"Select", color:"#1A4FA0", abbr:"A", desc:"Select partner. Focused boutique delivery with a signed co-sell agreement and scoped accelerator.", tags:["Select","Boutique"], ind:["Financial Services","Healthcare"], ai:false, quote:""},
 ];
 
