@@ -32,6 +32,9 @@
   .section{padding:84px 0}
   .muted{color:var(--ink-soft)}
 
+  /* version banner */
+  .versionbar{background:var(--slate);color:#fff;font-size:12.5px;font-weight:600;text-align:center;padding:8px 16px;letter-spacing:.01em}
+  .versionbar b{color:#FF9A4D;font-weight:800}
   /* nav */
   header.nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
@@ -267,6 +270,9 @@
 </head>
 <body>
 
+<!-- VERSION: bump on each update -->
+<div class="versionbar"><b>PROTOTYPE</b> · v0.9 · Jun 30 2026 — concept for discussion only, not an official Alation page</div>
+
 <header class="nav">
   <div class="wrap nav-inner">
     <div class="logo"><span class="dot"></span>Alation <span style="color:var(--orange)">AIOS™</span></div>
@@ -401,8 +407,8 @@
       </div>
       <div class="cities">
         <div class="city"><div class="cflag">🇺🇸</div><strong>Chicago</strong><span>Sep 17 · Old Post Office</span></div>
-        <div class="city"><div class="cflag">🇬🇧</div><strong>London</strong><span>Dates coming soon</span></div>
-        <div class="city"><div class="cflag">🇦🇺</div><strong>Sydney</strong><span>Dates coming soon</span></div>
+        <div class="city"><div class="cflag">🇬🇧</div><strong>London</strong><span>Sep 30 · Convene</span></div>
+        <div class="city"><div class="cflag">🇦🇺</div><strong>Sydney</strong><span>Oct 8 · Museum of Contemporary Art</span></div>
       </div>
     </div>
     <div class="newsgrid">
@@ -415,7 +421,7 @@
       <div class="newscard" onclick="alert('Demo: read the full release')">
         <div class="ncmeta"><span class="ntag">Partnership</span><span class="ndate">Jun 2026</span></div>
         <h4>Alation &amp; Capgemini unveil the Build-First roadmap</h4>
-        <p>Azure-led governance, DORA resilience, and Retail/CPG accelerators rolling out across EMEA and UK&amp;I.</p>
+        <p>A cross-industry offering rolling out worldwide — data governance, DORA resilience, and Retail/CPG accelerators.</p>
         <span class="more">Read more →</span>
       </div>
       <div class="newscard" onclick="alert('Demo: read the full release')">
@@ -480,12 +486,12 @@
       <div class="ai-card">
         <div class="ic">⚙️</div>
         <h3>Co-built solution accelerators</h3>
-        <p>Vertical accelerators on Agent Studio + SI partner MCP agents — E-21/E-23, DORA, Patient 360, AML — deployable on day one, neither party can build alone.</p>
+        <p>Vertical accelerators on Agent Studio + SI partner MCP agents — E-21 today (E-23 next), DORA, Patient 360, AML — deployable on day one, neither party can build alone.</p>
       </div>
       <div class="ai-card">
         <div class="ic">🚀</div>
         <h3>Scale through preferred SIs</h3>
-        <p>PwC, Accenture, and Capgemini co-deliver the AIOS™ into FSI, Healthcare, Energy, and Transportation. Sell-With today, Sell-Through next.</p>
+        <p>PwC, Accenture, and Capgemini co-deliver the AIOS™ into FSI, Healthcare, Energy, and Transportation — and the fastest-growing enterprise AI budgets.</p>
       </div>
     </div>
   </div>
@@ -504,7 +510,7 @@
         <div class="vbanner" style="background:linear-gradient(135deg,#2563EB,#1E3A8A)"><div class="sheen"></div><h3>Financial Services &amp; Banking</h3></div>
         <div class="vbody">
           <p class="voutcome">Turn regulatory pressure into advantage — govern every critical data element so AI for risk, fraud, and AML runs on data regulators trust.</p>
-          <div class="vmeta"><p class="vsi">Delivered with <b>PwC · Accenture</b></p><span class="vaccel">E-21 / E-23 Accelerator</span></div>
+          <div class="vmeta"><p class="vsi">Delivered with <b>PwC · Accenture</b></p><span class="vaccel">E-21 Accelerator</span></div>
         </div>
       </div>
       <div class="vcard">
@@ -611,7 +617,7 @@
     <div style="margin-top:50px">
       <div class="cta-band">
         <h2>Deliver the AIOS™ together.</h2>
-        <p>Sell-With today. Sell-Through next. Sell-To as the horizon. The window to build this advantage is now.</p>
+        <p>Co-build the accelerators that turn trusted data into enterprise AI. The window to build this advantage is now.</p>
         <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
           <button class="btn btn-white" onclick="alert('Demo flow: partner application form')">Become a partner</button>
           <button class="btn btn-ghost" style="border-color:rgba(255,255,255,.6);color:#fff" onclick="alert('Demo flow: APN Partner Portal login')">Partner portal login</button>
@@ -656,9 +662,9 @@ const partners = [
   {name:"Tableau", type:"tech", color:"#1F77B4", abbr:"T", desc:"Best-in-class visualization powered by trusted, governed data from the Alation catalog.", tags:["Analytics","Visualization"], ind:["Retail","Healthcare"], ai:false, quote:""},
   {name:"Microsoft Azure", type:"tech", color:"#0078D4", abbr:"⊞", desc:"Govern and discover data across Azure data services with active metadata.", tags:["Cloud","Governance"], ind:["Public Sector","Manufacturing"], ai:true, quote:""},
   {name:"dbt Labs", type:"tech", color:"#FF694B", abbr:"d", desc:"Pipeline and transformation lineage that ensures the right data gets moved and trusted.", tags:["Transformation","Lineage"], ind:["Technology"], ai:false, quote:""},
-  {name:"PwC", type:"si", tier:"Strategic", launch:true, color:"#D04A02", abbr:"pwc", desc:"Launch preferred SI. Co-built E-21/E-23 regulatory accelerator (Agent Studio + FSI Glossary + Policy Pack) for Canadian and US banking.", tags:["Launch Partner","FSI","E-21 Accelerator"], ind:["Financial Services","Healthcare","Manufacturing"], ai:true, quote:"Joint Alation + PwC E-21 solution: 70%+ reduction in manual compliance effort with full CDE traceability for OSFI."},
+  {name:"PwC", type:"si", tier:"Strategic", launch:true, color:"#D04A02", abbr:"pwc", desc:"Launch preferred SI. Co-built the E-21 regulatory accelerator (Agent Studio + FSI Glossary + Policy Pack) for Canadian and US banking — with E-23 to follow.", tags:["Launch Partner","FSI","E-21 Accelerator"], ind:["Financial Services","Healthcare","Manufacturing"], ai:true, quote:"Joint Alation + PwC E-21 solution: 70%+ reduction in manual compliance effort with full CDE traceability for OSFI."},
   {name:"Accenture", type:"si", tier:"Strategic", launch:true, color:"#A100FF", abbr:"›", desc:"Launch preferred SI. Global co-sell across FSI, Healthcare, Retail and Public Sector with vertical accelerators and exec alignment.", tags:["Launch Partner","AI Transformation","Healthcare"], ind:["Financial Services","Healthcare","Retail","Public Sector"], ai:true, quote:"JBP in progress — 2+ accelerators, field co-sell, executive alignment across CNA, Truist, NFCU and Vistra."},
-  {name:"Capgemini", type:"si", tier:"Strategic", launch:true, color:"#0070AD", abbr:"C", desc:"Launch preferred SI. Azure-led governance, DORA / EU financial resilience, and Retail/CPG accelerators across EMEA and UK&I.", tags:["Launch Partner","Azure Governance","DORA"], ind:["Financial Services","Retail","Manufacturing"], ai:true, quote:"Activating H1 FY27 — 2 accelerators, UK&I roadshow, EMEA PR under the AIOS™ narrative."},
+  {name:"Capgemini", type:"si", tier:"Strategic", launch:true, color:"#0070AD", abbr:"C", desc:"Launch preferred SI. A cross-industry offering deployed worldwide — data governance, DORA / financial resilience, and Retail/CPG accelerators built on the AIOS™.", tags:["Launch Partner","Cross-Industry","Worldwide"], ind:["Financial Services","Retail","Manufacturing","Healthcare","Public Sector"], ai:true, quote:"Activating H1 FY27 — cross-industry accelerators and a global go-to-market under the AIOS™ narrative."},
   {name:"Deloitte", type:"si", tier:"Premier", color:"#86BC25", abbr:"D", desc:"Premier candidate. Strategy, change management, and implementation services on a pathway to Preferred designation.", tags:["Premier","Consulting","Data Strategy"], ind:["Financial Services","Public Sector","Healthcare"], ai:true, quote:""},
   {name:"EY", type:"si", tier:"Premier", color:"#2E2E38", abbr:"EY", desc:"Premier candidate (selective). Regulatory and risk advisory engagements aligned to named accounts.", tags:["Premier","Risk Advisory"], ind:["Financial Services","Public Sector"], ai:false, quote:""},
   {name:"Slalom", type:"si", tier:"Select", color:"#0C62FB", abbr:"S", desc:"Select partner — Healthcare practice active. Certified delivery driving self-service analytics and data culture adoption.", tags:["Select","Healthcare","Enablement"], ind:["Retail","Healthcare"], ai:false, quote:""},
