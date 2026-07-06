@@ -107,7 +107,7 @@
 </style>
 </head>
 <body>
-<div class="versionbar"><b>PROTOTYPE</b> · v0.20 · Jul 6 2026 — concept for discussion only, not an official Alation page</div>
+<div class="versionbar"><b>PROTOTYPE</b> · v0.21 · Jul 6 2026 — concept for discussion only, not an official Alation page</div>
 <header class="nav">
   <div class="nav-inner">
     <a class="logo" href="index.html"><span class="dot"></span>Alation <span class="aios">AIOS™</span></a>
@@ -184,6 +184,118 @@ const PARTNERS={
       {label:"Read the announcement ↗", href:"https://www.linkedin.com/feed/update/urn:li:activity:7467742034540421121/", ext:true}
     ],
     related:["snowflake","databricks","aws","salesforce"]
+  },
+  pwc:{
+    name:"PwC", color:"#D04A02", type:"System integrator · Launch preferred",
+    badges:["Launch preferred SI","Strategic tier","AI-Ready"],
+    tagline:"A launch preferred SI operationalizing the AIOS at scale for regulated industries — starting with the E-21 compliance accelerator.",
+    glance:[{k:"Partner type",v:"System integrator · Strategic"},{k:"Relationship",v:"Launch preferred SI"},{k:"Flagship",v:"E-21 Compliance Accelerator"},{k:"Focus",v:"Financial Services & Banking"}],
+    history:"PwC is one of the world's largest professional services networks, spanning assurance, tax, and advisory across more than 150 countries. Its technology and data practices help regulated enterprises navigate compliance, risk, and modernization at global scale.",
+    alation:"PwC is a launch preferred system integrator for the Alation AIOS. Together the teams co-built the E-21 regulatory accelerator — combining Agent Studio, an FSI glossary, and a policy pack for Canadian and US banking, with E-23 as the natural follow-on. PwC operationalizes Alation's governed knowledge layer so risk, fraud, and AML programs run on data that regulators trust.",
+    solutions:[{t:"E-21 Compliance Accelerator",d:"Govern every critical data element and compress OSFI E-21 preparation from months to days."},{t:"Critical data element governance",d:"Trusted, documented data for risk, fraud, and AML across the enterprise."},{t:"AI agents for compliance",d:"Agents on AWS Bedrock automate classification, lineage, and evidence packaging."}],
+    whyItMatters:"This partnership builds on decades of regulatory expertise — accelerating how it is operationalized at scale and brought to new industries and evolving frameworks.",
+    quoteSrc:"Illustrative positioning",
+    proof:[{t:"Months to days",d:"Compliance preparation compressed by the joint accelerator."},{t:"Auditor-ready",d:"Complete evidence packages ahead of regulatory deadlines."},{t:"Cross-industry",d:"A proven model extending beyond banking."}],
+    ctas:[{label:"Become a partner",href:"index.html#join",primary:true},{label:"Explore the directory",href:"index.html#directory"}],
+    related:["accenture","capgemini","aws"]
+  },
+  accenture:{
+    name:"Accenture", color:"#A100FF", type:"System integrator · Launch preferred",
+    badges:["Launch preferred SI","Strategic tier","AI-Ready"],
+    tagline:"A launch preferred SI scaling the AIOS across industries with vertical accelerators and executive alignment.",
+    glance:[{k:"Partner type",v:"System integrator · Strategic"},{k:"Relationship",v:"Launch preferred SI"},{k:"Focus",v:"Cross-industry co-sell"},{k:"Motion",v:"Vertical accelerators + JBP"}],
+    history:"Accenture is a leading global professional services company providing strategy, consulting, technology, and operations services across more than 120 countries, and is known for delivering large-scale digital and AI transformation.",
+    alation:"Accenture is a launch preferred system integrator for the Alation AIOS, driving global co-sell across Financial Services, Healthcare, Retail & Consumer Goods, and Travel & Transportation. The teams are building vertical accelerators on Agent Studio and aligning executives across named accounts through an active joint business plan.",
+    solutions:[{t:"Vertical accelerators",d:"Outcome-led solutions built once on Agent Studio and delivered across industries."},{t:"AI transformation",d:"Enterprise-scale modernization grounded in trusted, governed data."},{t:"Joint go-to-market",d:"Field co-sell, executive alignment, and account planning at scale."}],
+    whyItMatters:"Trusted, governed data is the foundation for enterprise AI — and the delivery muscle to scale it into every industry.",
+    quoteSrc:"Illustrative positioning",
+    proof:[{t:"2+ accelerators",d:"Co-built solutions in progress across priority verticals."},{t:"Executive alignment",d:"Named-account plans with field co-sell motion."},{t:"Global reach",d:"Delivery across industries and geographies."}],
+    ctas:[{label:"Become a partner",href:"index.html#join",primary:true},{label:"Explore the directory",href:"index.html#directory"}],
+    related:["pwc","capgemini","snowflake"]
+  },
+  capgemini:{
+    name:"Capgemini", color:"#0070AD", type:"System integrator · Launch preferred",
+    badges:["Launch preferred SI","Cross-industry","Worldwide"],
+    tagline:"A launch preferred SI delivering a cross-industry, worldwide offering on the AIOS.",
+    glance:[{k:"Partner type",v:"System integrator · Strategic"},{k:"Relationship",v:"Launch preferred SI"},{k:"Reach",v:"Worldwide, cross-industry"},{k:"Themes",v:"Governance · DORA · Retail/CPG"}],
+    history:"Capgemini is a global leader in consulting, technology services, and digital transformation, operating in more than 50 countries with deep engineering and data heritage.",
+    alation:"Capgemini is a launch preferred system integrator for the Alation AIOS, delivering a cross-industry offering deployed worldwide. The partnership spans data governance, DORA and financial resilience, and Retail and Consumer Goods accelerators built on the AIOS — activating a global go-to-market under a shared narrative.",
+    solutions:[{t:"Cross-industry accelerators",d:"Reusable, governed solutions that scale across sectors and regions."},{t:"DORA & financial resilience",d:"Operational resilience and governance for regulated financial services."},{t:"Retail & Consumer Goods",d:"Trusted data for demand, supply, and customer experience."}],
+    whyItMatters:"A worldwide, cross-industry motion that turns governed data into enterprise AI outcomes at scale.",
+    quoteSrc:"Illustrative positioning",
+    proof:[{t:"Worldwide",d:"A global go-to-market on the AIOS."},{t:"Cross-industry",d:"Accelerators spanning multiple sectors."},{t:"Resilience-ready",d:"DORA and financial-resilience expertise built in."}],
+    ctas:[{label:"Become a partner",href:"index.html#join",primary:true},{label:"Explore the directory",href:"index.html#directory"}],
+    related:["pwc","accenture","azure"]
+  },
+  snowflake:{
+    name:"Snowflake", color:"#29B5E8", type:"Technology partner",
+    badges:["Technology partner","AI-Ready"],
+    tagline:"Deep governance and self-service discovery across the Snowflake AI Data Cloud.",
+    glance:[{k:"Partner type",v:"Technology · Cloud data platform"},{k:"Integration",v:"Active metadata & lineage"},{k:"Focus",v:"Governed self-service"},{k:"AI-ready",v:"Yes"}],
+    history:"Snowflake is a cloud data platform delivering data warehousing, data lakes, engineering, and AI/ML on a single, elastic, multi-cloud architecture used by thousands of organizations worldwide.",
+    alation:"Alation provides deep, active-metadata governance and self-service discovery over Snowflake — lineage, policy, and business context so teams can quickly find data they trust in the Data Cloud and make it ready for analytics and AI.",
+    solutions:[{t:"Active metadata for Snowflake",d:"Automated lineage and rich context across the Data Cloud."},{t:"Governed self-service",d:"Find, understand, and trust data without bottlenecks."},{t:"AI-ready data",d:"Trusted context that grounds analytics and AI agents."}],
+    whyItMatters:"It should be fast and easy to govern critical data in Snowflake — and to make it trustworthy for every AI workload.",
+    quoteSrc:"Illustrative positioning",
+    proof:[{t:"Trusted discovery",d:"Self-service analytics on governed Data Cloud data."},{t:"Full lineage",d:"See where data comes from and how it is used."},{t:"AI-ready",d:"Context that reduces risk in AI initiatives."}],
+    ctas:[{label:"Become a partner",href:"index.html#join",primary:true},{label:"Explore the directory",href:"index.html#directory"}],
+    related:["databricks","aws","openai"]
+  },
+  databricks:{
+    name:"Databricks", color:"#FF3621", type:"Technology partner",
+    badges:["Technology partner","AI-Ready"],
+    tagline:"Governed discovery and lineage across the Databricks lakehouse.",
+    glance:[{k:"Partner type",v:"Technology · Lakehouse"},{k:"Integration",v:"Lineage & business context"},{k:"Focus",v:"Analytics & ML/AI"},{k:"AI-ready",v:"Yes"}],
+    history:"Databricks is the data and AI company behind the lakehouse architecture, unifying data engineering, analytics, and machine learning on open foundations such as Apache Spark, Delta Lake, and Unity Catalog.",
+    alation:"Alation adds business context, lineage, and governed discovery across the Databricks lakehouse — making all data ready for analytics and helping teams adopt machine learning and AI with confidence and trust.",
+    solutions:[{t:"Lakehouse governance",d:"Business context and policy across the Databricks lakehouse."},{t:"Pipeline lineage",d:"End-to-end visibility across transformations and models."},{t:"ML/AI enablement",d:"Trusted, documented data to accelerate ML and agents."}],
+    whyItMatters:"Empowering data-driven decisions and rapid ML adoption starts with data teams can find and trust.",
+    quoteSrc:"Illustrative positioning",
+    proof:[{t:"All data ready",d:"Analytics-ready data across the lakehouse."},{t:"Faster ML",d:"Trusted context accelerates model development."},{t:"Governed by default",d:"Policy and lineage travel with the data."}],
+    ctas:[{label:"Become a partner",href:"index.html#join",primary:true},{label:"Explore the directory",href:"index.html#directory"}],
+    related:["snowflake","aws","openai"]
+  },
+  aws:{
+    name:"AWS", color:"#FF9900", type:"Technology partner",
+    badges:["Technology partner","AI-Ready"],
+    tagline:"Accelerating data intelligence and trusted AI on AWS.",
+    glance:[{k:"Partner type",v:"Technology · Cloud"},{k:"Integration",v:"Alation on AWS"},{k:"AI",v:"Agents on Amazon Bedrock"},{k:"Focus",v:"Data modernization"}],
+    history:"Amazon Web Services is the world's most broadly adopted cloud platform, offering compute, storage, databases, analytics, and AI/ML services — including Amazon Bedrock — at global scale.",
+    alation:"Alation runs on and integrates across AWS to accelerate data intelligence — governed metadata and lineage for analytics and AI. The teams also power AI agents on Amazon Bedrock, as seen in the joint E-21 work with PwC for regulated banking.",
+    solutions:[{t:"Alation on AWS",d:"Deploy and scale the AIOS natively on AWS."},{t:"Data modernization",d:"Migrate and govern data with trust and lineage."},{t:"Agents on Bedrock",d:"Automate classification, lineage, and evidence with AI agents."}],
+    whyItMatters:"Delighting customers means accelerating data intelligence — with governance that makes cloud AI trustworthy.",
+    quoteSrc:"Illustrative positioning",
+    proof:[{t:"Cloud scale",d:"Elastic performance on the world's most adopted cloud."},{t:"Trusted AI",d:"Governed context for Bedrock-powered agents."},{t:"Modernized data",d:"Migrations grounded in lineage and policy."}],
+    ctas:[{label:"Become a partner",href:"index.html#join",primary:true},{label:"Explore the directory",href:"index.html#directory"}],
+    related:["snowflake","databricks","salesforce"]
+  },
+  salesforce:{
+    name:"Salesforce", color:"#00A1E0", type:"Technology partner",
+    badges:["Technology partner","AI-Ready"],
+    tagline:"Trusted, governed metadata for Salesforce Data Cloud and CRM.",
+    glance:[{k:"Partner type",v:"Technology · CRM & Data Cloud"},{k:"Integration",v:"Metadata from 100+ systems"},{k:"Focus",v:"Customer data trust"},{k:"AI-ready",v:"Yes"}],
+    history:"Salesforce is the leading customer relationship management platform, spanning sales, service, marketing, and Data Cloud, and connecting customer data across the enterprise.",
+    alation:"Alation unifies CRM and enterprise metadata, giving Salesforce Data Cloud users governed access to metadata from more than 100 systems — so customer data is trusted, discoverable, and ready for analytics and AI.",
+    solutions:[{t:"Metadata for Data Cloud",d:"Bring context from 100+ systems into Salesforce Data Cloud."},{t:"CRM data governance",d:"Policy, lineage, and ownership for customer data."},{t:"Connected enterprise",d:"A trusted view of data spanning the customer lifecycle."}],
+    whyItMatters:"Great customer experiences run on trusted data — unified, governed, and ready for AI.",
+    quoteSrc:"Illustrative positioning",
+    proof:[{t:"100+ systems",d:"Metadata unified into Data Cloud."},{t:"Trusted CRM",d:"Governed, documented customer data."},{t:"AI-ready",d:"Context that grounds customer-facing AI."}],
+    ctas:[{label:"Become a partner",href:"index.html#join",primary:true},{label:"Explore the directory",href:"index.html#directory"}],
+    related:["snowflake","aws","openai"]
+  },
+  azure:{
+    name:"Microsoft Azure", color:"#0078D4", type:"Technology partner",
+    badges:["Technology partner","Expanding"],
+    tagline:"Governed discovery across Azure data services — with a deeper partnership on the horizon.",
+    glance:[{k:"Partner type",v:"Technology · Cloud"},{k:"Integration",v:"Active metadata for Azure"},{k:"Status",v:"Partnership expanding"},{k:"Focus",v:"Analytics & AI on Azure"}],
+    history:"Microsoft Azure is Microsoft's cloud platform, offering compute, storage, databases, analytics, and AI services across a global footprint used widely by enterprises and the public sector.",
+    alation:"Alation helps teams govern and discover data across Azure data services with active metadata — lineage, policy, and business context for analytics and AI on Azure. A broader joint offering with Microsoft is on the roadmap.",
+    solutions:[{t:"Active metadata for Azure",d:"Lineage and context across Azure data services."},{t:"Governed analytics",d:"Trusted data for analytics teams on Azure."},{t:"AI-ready foundations",d:"Context that prepares Azure data for AI."}],
+    whyItMatters:"Enterprises on Azure need governed, explainable data to make cloud AI trustworthy — with more to come.",
+    quoteSrc:"Illustrative positioning · partnership expanding",
+    proof:[{t:"Azure-native",d:"Governance across Azure data services."},{t:"Trusted analytics",d:"Documented, policy-aware data."},{t:"On the roadmap",d:"A deeper joint offering coming soon."}],
+    ctas:[{label:"Become a partner",href:"index.html#join",primary:true},{label:"Explore the directory",href:"index.html#directory"}],
+    related:["snowflake","databricks","aws"]
   }
 };
 

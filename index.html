@@ -298,12 +298,42 @@
   .csinvite h3,.csinvite .csrole{color:var(--slate-30)}
   .modal .row{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
   .modal p{font-size:14.5px;color:var(--ink-soft)}
+
+  /* momentum */
+  .mstats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:30px 0 22px}
+  @media(max-width:760px){.mstats{grid-template-columns:1fr 1fr}}
+  .mstat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+  .mstat .mn{font-size:30px;font-weight:800;color:var(--orange)}
+  .mstat .ml{font-size:13px;color:var(--ink-soft);margin-top:4px}
+  .growth{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px}
+  .gbars{display:flex;align-items:flex-end;gap:14px;height:150px}
+  .gbar{flex:1;background:linear-gradient(180deg,#FFB98A,#F25C05);border-radius:8px 8px 0 0;position:relative;min-height:8px}
+  .gbar.hl{background:linear-gradient(180deg,#F25C05,#D44E03)}
+  .gbar span{position:absolute;bottom:-22px;left:0;right:0;text-align:center;font-size:11px;font-weight:700;color:var(--slate-30)}
+  .illus{font-size:11.5px;color:var(--slate-30);margin-top:30px;font-style:italic}
+  /* agentic / acu */
+  .acu{background:radial-gradient(600px 200px at 50% 0,#FFF1E9,transparent),#fff;border:1px solid var(--line);border-radius:20px;padding:30px;margin:26px 0;text-align:center}
+  .acu-core{display:inline-flex;flex-direction:column;background:linear-gradient(135deg,var(--orange),#FF8A4C);color:#fff;font-weight:800;font-size:18px;padding:16px 30px;border-radius:14px;box-shadow:0 12px 30px rgba(242,92,5,.3)}
+  .acu-core span{font-size:12px;font-weight:600;opacity:.9;margin-top:2px}
+  .acu-grid{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:20px}
+  .acap{background:var(--bg-soft);border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:13px;font-weight:700;color:var(--slate-2)}
+  .flywheel{display:flex;align-items:stretch;gap:10px;flex-wrap:wrap;margin-top:26px}
+  .fw{flex:1;min-width:180px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
+  .fw .fwn{width:30px;height:30px;border-radius:50%;background:var(--orange-soft);color:var(--orange);font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+  .fw h4{font-size:15.5px;color:var(--slate)}
+  .fw p{font-size:13px;color:var(--ink-soft);margin-top:4px}
+  .fwarrow{display:flex;align-items:center;color:var(--slate-30);font-weight:800;font-size:20px}
+  @media(max-width:760px){.fwarrow{display:none}.flywheel .fw{min-width:100%}}
+  /* pitch band */
+  .pitchband{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .pitchcta{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+  .pitchnote{font-size:12px;color:var(--slate-30);font-weight:600}
 </style>
 </head>
 <body>
 
 <!-- VERSION: bump on each update (v0.18 content; redeploy) -->
-<div class="versionbar"><b>PROTOTYPE</b> · v0.20 · Jul 6 2026 — concept for discussion only, not an official Alation page</div>
+<div class="versionbar"><b>PROTOTYPE</b> · v0.21 · Jul 6 2026 — concept for discussion only, not an official Alation page</div>
 
 <header class="nav">
   <div class="wrap nav-inner">
@@ -361,14 +391,14 @@
         <line class="eco-line tech" x1="50" y1="50" x2="15" y2="53"/>
       </svg>
       <div class="enode center" style="left:50%;top:50%"><span>Alation AIOS™</span></div>
-      <div class="enode si" style="left:50%;top:24%;animation-delay:0s"><span class="lg" style="background:#D04A02" data-logo="PwC"></span>PwC</div>
-      <div class="enode si" style="left:28%;top:68%;animation-delay:.8s"><span class="lg" style="background:#A100FF" data-logo="Accenture"></span>Accenture</div>
-      <div class="enode si" style="left:72%;top:68%;animation-delay:1.6s"><span class="lg" style="background:#0070AD" data-logo="Capgemini"></span>Capgemini</div>
-      <div class="enode tech" style="left:50%;top:7%;animation-delay:.4s"><span class="lg" style="background:#29B5E8" data-logo="Snowflake"></span>Snowflake</div>
-      <div class="enode tech" style="left:86%;top:33%;animation-delay:1.2s"><span class="lg" style="background:#FF3621" data-logo="Databricks"></span>Databricks</div>
-      <div class="enode tech" style="left:84%;top:80%;animation-delay:2s"><span class="lg" style="background:#FF9900" data-logo="AWS"></span>AWS</div>
-      <div class="enode tech" style="left:16%;top:80%;animation-delay:.6s"><span class="lg" style="background:#00A1E0" data-logo="Salesforce"></span>Salesforce</div>
-      <div class="enode tech" style="left:14%;top:33%;animation-delay:1.4s"><span class="lg" style="background:#0078D4" data-logo="Azure"></span>Azure</div>
+      <a class="enode si linked" href="partner.html?p=pwc" style="left:50%;top:24%;animation-delay:0s"><span class="lg" style="background:#D04A02" data-logo="PwC"></span>PwC</a>
+      <a class="enode si linked" href="partner.html?p=accenture" style="left:28%;top:68%;animation-delay:.8s"><span class="lg" style="background:#A100FF" data-logo="Accenture"></span>Accenture</a>
+      <a class="enode si linked" href="partner.html?p=capgemini" style="left:72%;top:68%;animation-delay:1.6s"><span class="lg" style="background:#0070AD" data-logo="Capgemini"></span>Capgemini</a>
+      <a class="enode tech linked" href="partner.html?p=snowflake" style="left:50%;top:7%;animation-delay:.4s"><span class="lg" style="background:#29B5E8" data-logo="Snowflake"></span>Snowflake</a>
+      <a class="enode tech linked" href="partner.html?p=databricks" style="left:86%;top:33%;animation-delay:1.2s"><span class="lg" style="background:#FF3621" data-logo="Databricks"></span>Databricks</a>
+      <a class="enode tech linked" href="partner.html?p=aws" style="left:84%;top:80%;animation-delay:2s"><span class="lg" style="background:#FF9900" data-logo="AWS"></span>AWS</a>
+      <a class="enode tech linked" href="partner.html?p=salesforce" style="left:16%;top:80%;animation-delay:.6s"><span class="lg" style="background:#00A1E0" data-logo="Salesforce"></span>Salesforce</a>
+      <a class="enode tech linked" href="partner.html?p=azure" style="left:14%;top:33%;animation-delay:1.4s"><span class="lg" style="background:#0078D4" data-logo="Azure"></span>Azure</a>
       <a class="enode tech linked" href="partner.html?p=openai" style="left:12%;top:53%;animation-delay:1s"><span class="lg" style="background:#10A37F" data-logo="OpenAI"></span>OpenAI</a>
       <div class="eco-legend"><span><span class="d" style="background:#FF8A4C"></span>System Integrators</span><span><span class="d" style="background:#60A5FA"></span>Technology partners</span></div>
     </div>
@@ -598,6 +628,81 @@
           <div class="vmeta"><p class="vsi">Delivered with <b>Capgemini</b></p><span class="vaccel">Cross-Industry Accelerators</span></div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOMENTUM -->
+<section class="section" id="momentum">
+  <div class="wrap">
+    <div style="max-width:760px">
+      <span class="eyebrow">Momentum</span>
+      <h2>The ecosystem and Alation, growing together</h2>
+      <p class="muted">From a handful of early integrations to a global network of system integrators and technology partners, we've scaled the AIOS™ side by side — co-building accelerators, co-selling into new verticals, and compounding value for our shared customers.</p>
+    </div>
+    <div class="mstats">
+      <div class="mstat"><div class="mn">500+</div><div class="ml">Partners in the network</div></div>
+      <div class="mstat"><div class="mn">6 yrs</div><div class="ml">Of compounding co-sell growth</div></div>
+      <div class="mstat"><div class="mn">1,000s</div><div class="ml">Joint opportunities pursued together</div></div>
+      <div class="mstat"><div class="mn">9</div><div class="ml">Marquee partners on the AIOS™</div></div>
+    </div>
+    <div class="growth">
+      <div class="gbars">
+        <div class="gbar" style="height:16%"><span>'20</span></div>
+        <div class="gbar" style="height:46%"><span>'21</span></div>
+        <div class="gbar" style="height:58%"><span>'22</span></div>
+        <div class="gbar" style="height:76%"><span>'23</span></div>
+        <div class="gbar" style="height:82%"><span>'24</span></div>
+        <div class="gbar" style="height:90%"><span>'25</span></div>
+        <div class="gbar hl" style="height:100%"><span>'26</span></div>
+      </div>
+      <p class="illus">Directional illustration of ecosystem growth — figures are placeholders for this prototype.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AGENTIC / ACU -->
+<section class="section" id="agentic" style="background:var(--bg-soft);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div style="max-width:840px">
+      <span class="eyebrow">The next chapter</span>
+      <h2>Powering the agentic enterprise, together</h2>
+      <p class="muted">Our partnerships help customers become <strong>agentic enterprises</strong> — where people and AI agents pursue outcomes together on a foundation of trusted, governed data. As partners build a greater diversity of solutions on the AIOS™, those agentic workloads run on <strong>Alation Compute Units (ACU)</strong> — a single, flexible pool of compute that powers the platform and drives a shared engine of transformation, modernization, and customer delight.</p>
+    </div>
+    <div class="acu">
+      <div class="acu-core">Alation Compute Units<span>One pool · full flexibility</span></div>
+      <div class="acu-grid">
+        <div class="acap">Curation Automation</div>
+        <div class="acap">Data Quality</div>
+        <div class="acap">Agent Studio</div>
+        <div class="acap">Data Products Marketplace</div>
+        <div class="acap">Critical Data Manager</div>
+      </div>
+      <p class="illus">Illustrative — one ACU pool powers usage across the platform. Specifics are covered in partner enablement.</p>
+    </div>
+    <div class="flywheel">
+      <div class="fw"><div class="fwn">1</div><h4>Partners build</h4><p>SIs & technology partners co-build accelerators and agentic solutions on the AIOS™.</p></div>
+      <div class="fwarrow">→</div>
+      <div class="fw"><div class="fwn">2</div><h4>Customers go agentic</h4><p>People and agents pursue outcomes together on trusted, governed data.</p></div>
+      <div class="fwarrow">→</div>
+      <div class="fw"><div class="fwn">3</div><h4>ACU consumption grows</h4><p>More agentic workloads draw from the shared ACU pool.</p></div>
+      <div class="fwarrow">→</div>
+      <div class="fw"><div class="fwn">4</div><h4>Everyone grows</h4><p>Shared success funds the next wave of solutions — and the flywheel spins faster.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER PITCH DECK (placeholder) -->
+<section class="section" id="pitch" style="background:var(--slate);color:#fff">
+  <div class="wrap pitchband">
+    <div style="max-width:600px">
+      <span class="eyebrow" style="color:#FF9A4D">Partner enablement</span>
+      <h2 style="color:#fff">Build more. Grow more.</h2>
+      <p style="color:#C7D0DA">A partner pitch deck to help you motivate teams to build a greater diversity of solutions on the AIOS™ — and grow ACU consumption together. In production now.</p>
+    </div>
+    <div class="pitchcta">
+      <a class="btn btn-primary" href="#" onclick="alert('Placeholder: partner pitch deck coming soon');return false;">Get the partner pitch deck</a>
+      <span class="pitchnote">Placeholder — deck in production</span>
     </div>
   </div>
 </section>
