@@ -299,7 +299,7 @@
 <body>
 
 <!-- VERSION: bump on each update -->
-<div class="versionbar"><b>PROTOTYPE</b> · v0.17 · Jun 30 2026 — concept for discussion only, not an official Alation page</div>
+<div class="versionbar"><b>PROTOTYPE</b> · v0.18 · Jun 30 2026 — concept for discussion only, not an official Alation page</div>
 
 <header class="nav">
   <div class="wrap nav-inner">
@@ -354,6 +354,7 @@
         <line class="eco-line tech" x1="50" y1="50" x2="84" y2="80"/>
         <line class="eco-line tech" x1="50" y1="50" x2="16" y2="80"/>
         <line class="eco-line tech" x1="50" y1="50" x2="14" y2="33"/>
+        <line class="eco-line tech" x1="50" y1="50" x2="15" y2="53"/>
       </svg>
       <div class="enode center" style="left:50%;top:50%"><span>Alation AIOS™</span></div>
       <div class="enode si" style="left:50%;top:24%;animation-delay:0s"><span class="lg" style="background:#D04A02" data-logo="PwC"></span>PwC</div>
@@ -364,6 +365,7 @@
       <div class="enode tech" style="left:84%;top:80%;animation-delay:2s"><span class="lg" style="background:#FF9900" data-logo="AWS"></span>AWS</div>
       <div class="enode tech" style="left:16%;top:80%;animation-delay:.6s"><span class="lg" style="background:#00A1E0" data-logo="Salesforce"></span>Salesforce</div>
       <div class="enode tech" style="left:14%;top:33%;animation-delay:1.4s"><span class="lg" style="background:#0078D4" data-logo="Azure"></span>Azure</div>
+      <div class="enode tech" style="left:12%;top:53%;animation-delay:1s"><span class="lg" style="background:#10A37F" data-logo="OpenAI"></span>OpenAI</div>
       <div class="eco-legend"><span><span class="d" style="background:#FF8A4C"></span>System Integrators</span><span><span class="d" style="background:#60A5FA"></span>Technology partners</span></div>
     </div>
   </div>
@@ -481,6 +483,12 @@
       </div>
     </div>
     <div class="newsgrid">
+      <div class="newscard" onclick="alert('Demo: read the full release')">
+        <div class="ncmeta"><span class="ntag">Partnership</span><span class="ndate">Jun 2026</span></div>
+        <h4>Alation joins OpenAI Codex as a launch plugin partner</h4>
+        <p>Alation is officially part of OpenAI Codex plugins — bringing trusted data, governed metadata, and clear context directly into the model as the knowledge layer for enterprise AI agents.</p>
+        <span class="more">Read more →</span>
+      </div>
       <div class="newscard" onclick="alert('Demo: read the full release')">
         <div class="ncmeta"><span class="ntag">Partnership</span><span class="ndate">Jun 2026</span></div>
         <h4>Alation, PwC Canada &amp; AWS launch the E-21 Compliance Accelerator</h4>
@@ -707,6 +715,7 @@
 
 <script>
 const partners = [
+  {name:"OpenAI", type:"tech", color:"#10A37F", abbr:"O", desc:"Launch plugin partner for OpenAI Codex. Alation brings trusted data, governed metadata, and clear context directly into Codex — so AI agents work from your organization's knowledge, not guesswork.", tags:["AI Model Provider","Codex Plugin","Knowledge Layer"], ind:["Cross Industry","Technology","Financial Services"], ai:true, quote:"AI agents are only as good as the context they can access — Alation is the knowledge layer for AI."},
   {name:"Snowflake", type:"tech", color:"#29B5E8", abbr:"❄", desc:"Deep data governance integration and self-service analytics on the Snowflake Data Cloud.", tags:["Cloud Data Platform","Governance"], ind:["Financial Services","Retail and Consumer Goods","Healthcare"], ai:true, quote:"Alation makes it fast and easy to govern critical data in Snowflake. — Sunny Bedi, CIO & CDO"},
   {name:"Databricks", type:"tech", color:"#FF3621", abbr:"D", desc:"Make all data ready for analytics and rapidly adopt machine learning across the organization.", tags:["Lakehouse","ML/AI"], ind:["Technology","Telecommunications","Media"], ai:true, quote:"Empower data-driven decisions and adopt ML to outpace the competition."},
   {name:"AWS", type:"tech", color:"#FF9900", abbr:"a", desc:"Accelerate data intelligence and drive better insights leveraging Alation on AWS.", tags:["Cloud","Data Modernization"], ind:["Cross Industry","Financial Services","Technology"], ai:true, quote:"We are delighted to help customers accelerate data intelligence. — Ken Chestnut, AWS"},
@@ -736,7 +745,8 @@ const LOGOS={
   "AWS":'<svg viewBox="0 0 24 24"><text x="12" y="12" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="8.5" fill="#fff">aws</text><path d="M6 16c4 2.6 8 2.6 12 0" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M16.2 15.1l2.1.6-.7 2" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   "Salesforce":'<svg viewBox="0 0 24 24" fill="#fff"><path d="M16.8 17.5H8.4a3.7 3.7 0 0 1-1-7.2 4.3 4.3 0 0 1 8-1.2 3.1 3.1 0 0 1 1.4 8.4z"/></svg>',
   "Azure":'<svg viewBox="0 0 24 24" fill="#fff"><path d="M10.6 4.5L4.5 19.5h4.2l1.1-3 5.6 1.6z"/><path d="M12.2 7.5l6.3 12H10.6l3.1-6.6z" opacity=".7"/></svg>',
-  "EY":'<svg viewBox="0 0 24 24"><text x="12" y="13.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="10.5" fill="#fff">EY</text><path d="M5 19L19 14.5" stroke="#FFE600" stroke-width="2.2" stroke-linecap="round"/></svg>'
+  "EY":'<svg viewBox="0 0 24 24"><text x="12" y="13.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="10.5" fill="#fff">EY</text><path d="M5 19L19 14.5" stroke="#FFE600" stroke-width="2.2" stroke-linecap="round"/></svg>',
+  "OpenAI":'<svg viewBox="0 0 24 24" fill="#fff"><g transform="translate(12,12)"><ellipse rx="2.1" ry="6.4"/><ellipse rx="2.1" ry="6.4" transform="rotate(60)"/><ellipse rx="2.1" ry="6.4" transform="rotate(120)"/></g></svg>'
 };
 LOGOS["Microsoft Azure"]=LOGOS["Azure"];
 const mark=p=>LOGOS[p.name]||p.abbr;
