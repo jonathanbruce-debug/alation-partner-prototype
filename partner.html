@@ -125,7 +125,7 @@
 </style>
 </head>
 <body>
-<div class="versionbar"><b>PROTOTYPE</b> · v0.22 · Jul 6 2026 — concept for discussion only, not an official Alation page</div>
+<div class="versionbar"><b>PROTOTYPE</b> · v0.23 · Jul 6 2026 — concept for discussion only, not an official Alation page</div>
 <header class="nav">
   <div class="nav-inner">
     <a class="logo" href="index.html"><span class="dot"></span>Alation <span class="aios">AIOS™</span></a>
@@ -340,7 +340,7 @@ function render(){
   let quoteBlock;
   if(p.featuredQuote){
     const fq=p.featuredQuote;
-    const words=fq.text.split(" ").map((w,i)=>`<span class="w" style="transition-delay:${(0.2+i*0.03).toFixed(2)}s">${w} </span>`).join("");
+    const words=fq.text.split(" ").map((w,i)=>`<span class="w" style="transition-delay:${(0.2+i*0.03).toFixed(2)}s">${w}</span>`).join(" ");
     quoteBlock=`<section class="qslide" style="background:linear-gradient(135deg,${p.color},#0e1726)">
       <span class="glow" style="width:340px;height:340px;background:${p.color};left:-70px;top:-90px"></span>
       <span class="glow" style="width:280px;height:280px;background:${p.color};right:-50px;bottom:-100px;animation-delay:2.5s"></span>
