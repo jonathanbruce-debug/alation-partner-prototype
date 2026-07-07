@@ -328,12 +328,33 @@
   .pitchband{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
   .pitchcta{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
   .pitchnote{font-size:12px;color:var(--slate-30);font-weight:600}
+
+  /* rotating quote carousel */
+  .qcar{position:relative;overflow:hidden;border-radius:22px;color:#fff;padding:46px 46px 44px;min-height:330px;margin-top:22px;transition:background .6s ease}
+  .qcar .glow{position:absolute;border-radius:50%;filter:blur(70px);opacity:.4;animation:qfloat 9s ease-in-out infinite;z-index:1}
+  .qcar>*{position:relative;z-index:2}
+  .qcar .qmark{font-family:Georgia,serif;font-size:110px;line-height:.6;height:54px;display:block;color:rgba(255,255,255,.9);opacity:0;transform:translateY(18px) scale(.6);transition:.8s cubic-bezier(.2,.8,.2,1)}
+  .qcar blockquote{font-size:27px;font-weight:600;line-height:1.42;letter-spacing:-.01em;margin:6px 0 24px;max-width:900px}
+  @media(max-width:760px){.qcar blockquote{font-size:20px}}
+  .qcar blockquote .w{display:inline-block;opacity:0;transform:translateY(14px);filter:blur(5px);transition:.5s ease}
+  .qcar .attrib{display:flex;align-items:center;gap:14px;opacity:0;transform:translateY(16px);transition:.7s ease}
+  .qcar .attrib .alogo{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex:none;box-shadow:0 8px 22px rgba(0,0,0,.3)}
+  .qcar .attrib .alogo svg{width:60%;height:60%}
+  .qcar .attrib .who strong{display:block;font-size:16px;color:#fff}
+  .qcar .attrib .who span{font-size:13.5px;color:rgba(255,255,255,.75)}
+  .qcar.in .qmark{opacity:1;transform:none}
+  .qcar.in blockquote .w{opacity:1;transform:none;filter:none}
+  .qcar.in .attrib{opacity:1;transform:none;transition-delay:.3s}
+  .qcar-dots{position:absolute;bottom:20px;right:26px;display:flex;gap:8px;z-index:3}
+  .qcar-dots i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:.25s}
+  .qcar-dots i.on{background:#fff;width:22px;border-radius:5px}
+  @keyframes qfloat{0%,100%{transform:translate(0,0)}50%{transform:translate(20px,-16px)}}
 </style>
 </head>
 <body>
 
 <!-- VERSION: bump on each update (v0.18 content; redeploy) -->
-<div class="versionbar"><b>PROTOTYPE</b> · v0.23 · Jul 6 2026 — concept for discussion only, not an official Alation page</div>
+<div class="versionbar"><b>PROTOTYPE</b> · v0.24 · Jul 6 2026 — concept for discussion only, not an official Alation page</div>
 
 <header class="nav">
   <div class="wrap nav-inner">
@@ -474,27 +495,15 @@
 <!-- TESTIMONIAL -->
 <section class="section" id="stories" style="background:var(--bg-soft);padding-top:64px">
   <div class="wrap">
-    <span class="eyebrow">Partner stories</span>
-    <div class="tquote">
-      <span class="tmark">&ldquo;</span>
-      <blockquote>PwC Canada has been helping financial institutions navigate complex regulatory change for decades. This partnership builds on our existing technology capabilities by accelerating how we operationalize that expertise at scale — bringing proven solutions to new industries and evolving regulatory frameworks.</blockquote>
-      <div class="tattr">
-        <div class="logo-sq" style="background:#D04A02" data-logo="PwC"></div>
-        <div class="who">
-          <strong>Prithviraj Thakur</strong>
-          <span>Partner &amp; Data Management Practice Lead, PwC Canada</span>
-        </div>
+        <span class="eyebrow">Partner stories</span>
+      <h2 style="margin-bottom:6px">In their words</h2>
+      <div class="qcar" id="qcar">
+        <span class="glow" id="qcarGlow" style="width:320px;height:320px;left:-60px;top:-80px"></span>
+        <span class="qmark">&ldquo;</span>
+        <blockquote id="qcarBq"></blockquote>
+        <div class="attrib"><div class="alogo" id="qcarLogo"></div><div class="who"><strong id="qcarName"></strong><span id="qcarRole"></span></div></div>
+        <div class="qcar-dots" id="qcarDots"></div>
       </div>
-      <div class="tstats">
-        <div class="tstat"><div class="n">Months → days</div><div class="l">Compliance preparation compressed by the joint E-21 Accelerator</div></div>
-        <div class="tstat"><div class="n">Auditor-ready</div><div class="l">Complete evidence packages ahead of the Sept 2026 OSFI deadline</div></div>
-        <div class="tstat"><div class="n">Alation · PwC · AWS</div><div class="l">AI agents on AWS Bedrock automating CDE classification &amp; lineage</div></div>
-      </div>
-      <div class="tfoot">
-        <div class="tdots"><i class="on"></i><i></i><i></i></div>
-        <span>PwC Canada — more launch partner stories coming soon</span>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -935,6 +944,31 @@ function setNavTop(){const vb=document.querySelector('.versionbar');const nav=do
 setNavTop();
 window.addEventListener('resize',setNavTop);
 window.addEventListener('load',setNavTop);
+
+// rotating partner-story quote carousel
+const STORIES=[
+  {color:"#0070AD", name:"Capgemini", text:"Capgemini helps clients across industries focus on Critical Data Elements: 2% of the data estate, 98% of the metadata value. It's those 1,000-2,000 CDEs that most deserve the 360° view across glossary, synonyms, rules, classification, lineage, policy, ownership and the semantic layer for AI.", author:"Ralf Teschner", role:"Global Data Trust Lead, Capgemini"},
+  {color:"#D04A02", name:"PwC", text:"PwC Canada has been helping financial institutions navigate complex regulatory change for decades. This partnership builds on our existing technology capabilities by accelerating how we operationalize that expertise at scale — bringing proven solutions to new industries and evolving regulatory frameworks.", author:"Prithviraj Thakur", role:"Partner & Data Management Practice Lead, PwC Canada"}
+];
+let qi=0, qTimer=null;
+function showStory(i){
+  qi=(i%STORIES.length+STORIES.length)%STORIES.length;
+  const s=STORIES[qi], car=document.getElementById('qcar');
+  if(!car) return;
+  car.classList.remove('in');
+  car.style.background='linear-gradient(135deg,'+s.color+',#0e1726)';
+  document.getElementById('qcarGlow').style.background=s.color;
+  document.getElementById('qcarBq').innerHTML=s.text.split(' ').map((w,k)=>'<span class="w" style="transition-delay:'+(0.15+k*0.028).toFixed(2)+'s">'+w+'</span>').join(' ');
+  const lg=document.getElementById('qcarLogo'); lg.style.background=s.color; lg.innerHTML=LOGOS[s.name]||'';
+  document.getElementById('qcarName').textContent=s.author;
+  document.getElementById('qcarRole').textContent=s.role;
+  document.getElementById('qcarDots').innerHTML=STORIES.map((_,k)=>'<i class="'+(k===qi?'on':'')+'" onclick="goStory('+k+')"></i>').join('');
+  void car.offsetWidth;
+  requestAnimationFrame(()=>car.classList.add('in'));
+}
+function goStory(i){showStory(i);restartQ();}
+function restartQ(){clearInterval(qTimer);qTimer=setInterval(()=>showStory(qi+1),7000);}
+(function(){const car=document.getElementById('qcar');if(!car)return;showStory(0);restartQ();car.addEventListener('mouseenter',()=>clearInterval(qTimer));car.addEventListener('mouseleave',restartQ);})();
 </script>
 </body>
 </html>
