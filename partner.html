@@ -104,10 +104,28 @@
 
   .fallback{padding:80px 0;text-align:center}
   .fallback h1{font-size:34px;margin:16px 0 10px}
+
+  /* animated featured quote slide */
+  .qslide{position:relative;overflow:hidden;color:#fff;padding:74px 0}
+  .qslide .wrap{position:relative;z-index:2;max-width:960px}
+  .qslide .glow{position:absolute;border-radius:50%;filter:blur(70px);opacity:.45;animation:qfloat 9s ease-in-out infinite;z-index:1}
+  .qslide .qmark{font-family:Georgia,serif;font-size:120px;line-height:.6;height:64px;display:block;color:rgba(255,255,255,.92);opacity:0;transform:translateY(20px) scale(.6);transition:.9s cubic-bezier(.2,.8,.2,1)}
+  .qslide blockquote{font-size:30px;font-weight:600;line-height:1.42;letter-spacing:-.01em;margin:8px 0 26px}
+  @media(max-width:760px){.qslide blockquote{font-size:22px}}
+  .qslide blockquote .w{display:inline-block;opacity:0;transform:translateY(14px);filter:blur(5px);transition:.5s ease}
+  .qslide .attrib{display:flex;align-items:center;gap:14px;opacity:0;transform:translateY(16px);transition:.7s ease}
+  .qslide .attrib .alogo{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex:none;box-shadow:0 8px 22px rgba(0,0,0,.3)}
+  .qslide .attrib .alogo svg{width:60%;height:60%}
+  .qslide .attrib .who strong{display:block;font-size:16px;color:#fff}
+  .qslide .attrib .who span{font-size:13.5px;color:rgba(255,255,255,.72)}
+  .qslide.in .qmark{opacity:1;transform:translateY(0) scale(1)}
+  .qslide.in blockquote .w{opacity:1;transform:translateY(0);filter:blur(0)}
+  .qslide.in .attrib{opacity:1;transform:translateY(0);transition-delay:.35s}
+  @keyframes qfloat{0%,100%{transform:translate(0,0)}50%{transform:translate(22px,-16px)}}
 </style>
 </head>
 <body>
-<div class="versionbar"><b>PROTOTYPE</b> · v0.21 · Jul 6 2026 — concept for discussion only, not an official Alation page</div>
+<div class="versionbar"><b>PROTOTYPE</b> · v0.22 · Jul 6 2026 — concept for discussion only, not an official Alation page</div>
 <header class="nav">
   <div class="nav-inner">
     <a class="logo" href="index.html"><span class="dot"></span>Alation <span class="aios">AIOS™</span></a>
@@ -225,6 +243,7 @@ const PARTNERS={
     quoteSrc:"Illustrative positioning",
     proof:[{t:"Worldwide",d:"A global go-to-market on the AIOS."},{t:"Cross-industry",d:"Accelerators spanning multiple sectors."},{t:"Resilience-ready",d:"DORA and financial-resilience expertise built in."}],
     ctas:[{label:"Become a partner",href:"index.html#join",primary:true},{label:"Explore the directory",href:"index.html#directory"}],
+    featuredQuote:{text:"Capgemini helps clients across industries focus on Critical Data Elements: 2% of the data estate, 98% of the metadata value. It's those 1,000-2,000 CDEs that most deserve the 360° view across glossary, synonyms, rules, classification, lineage, policy, ownership and the semantic layer for AI.", author:"Ralf Teschner", role:"Global Data Trust Lead", company:"Capgemini"},
     related:["pwc","accenture","azure"]
   },
   snowflake:{
@@ -318,6 +337,22 @@ function render(){
   const proof=(p.proof||[]).map(x=>'<div class="pitem"><h4>'+x.t+'</h4><p>'+x.d+'</p></div>').join('');
   const related=(p.related||[]).map(rs=>{const b=BRIEF[rs];if(!b)return '';return '<a class="rcard" href="partner.html?p='+rs+'"><div class="rlogo" style="background:'+b.color+'">'+(LOGOS[b.name]||'')+'</div><div><div class="rn">'+b.name+'</div><div class="rm">View partner →</div></div></a>';}).join('');
 
+  let quoteBlock;
+  if(p.featuredQuote){
+    const fq=p.featuredQuote;
+    const words=fq.text.split(" ").map((w,i)=>`<span class="w" style="transition-delay:${(0.2+i*0.03).toFixed(2)}s">${w} </span>`).join("");
+    quoteBlock=`<section class="qslide" style="background:linear-gradient(135deg,${p.color},#0e1726)">
+      <span class="glow" style="width:340px;height:340px;background:${p.color};left:-70px;top:-90px"></span>
+      <span class="glow" style="width:280px;height:280px;background:${p.color};right:-50px;bottom:-100px;animation-delay:2.5s"></span>
+      <div class="wrap">
+        <span class="qmark">&ldquo;</span>
+        <blockquote>${words}</blockquote>
+        <div class="attrib"><div class="alogo" style="background:${p.color}">${LOGOS[p.name]||""}</div><div class="who"><strong>${fq.author}</strong><span>${fq.role}, ${fq.company}</span></div></div>
+      </div>
+    </section>`;
+  } else {
+    quoteBlock=`<section class="section tight"><div class="wrap"><div class="quote"><span class="mark">&ldquo;</span><blockquote>${p.whyItMatters}</blockquote><div class="src">${p.quoteSrc||""}</div></div></div></section>`;
+  }
   el.innerHTML=`
   <section class="phero" style="background:${heroBg}">
     <div class="wrap">
@@ -357,13 +392,10 @@ function render(){
     </div>
   </section>
 
+  ${quoteBlock}
+
   <section class="section tight">
     <div class="wrap">
-      <div class="quote">
-        <span class="mark">&ldquo;</span>
-        <blockquote>${p.whyItMatters}</blockquote>
-        <div class="src">${p.quoteSrc||''}</div>
-      </div>
       <div class="proof">${proof}</div>
     </div>
   </section>
@@ -387,6 +419,8 @@ function render(){
       </div>
     </div>
   </section>`;
+  const _qs=document.querySelector('.qslide');
+  if(_qs){const _io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){_qs.classList.add('in');_io.disconnect();}});},{threshold:.25});_io.observe(_qs);}
   setNavTop();
 }
 
