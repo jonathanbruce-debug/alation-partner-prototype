@@ -349,12 +349,13 @@
   .qcar-dots i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:.25s}
   .qcar-dots i.on{background:#fff;width:22px;border-radius:5px}
   @keyframes qfloat{0%,100%{transform:translate(0,0)}50%{transform:translate(20px,-16px)}}
+  .qcar-flag{display:none;margin-top:14px;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.16);border:1px dashed rgba(255,255,255,.5);padding:6px 13px;border-radius:999px}
 </style>
 </head>
 <body>
 
 <!-- VERSION: bump on each update (v0.18 content; redeploy) -->
-<div class="versionbar"><b>PROTOTYPE</b> · v0.25 · Jul 6 2026 — concept for discussion only, not an official Alation page</div>
+<div class="versionbar"><b>PROTOTYPE</b> · v0.26 · Jul 6 2026 — concept for discussion only, not an official Alation page</div>
 
 <header class="nav">
   <div class="wrap nav-inner">
@@ -502,6 +503,7 @@
         <span class="qmark">&ldquo;</span>
         <blockquote id="qcarBq"></blockquote>
         <div class="attrib"><div class="alogo" id="qcarLogo"></div><div class="who"><strong id="qcarName"></strong><span id="qcarRole"></span></div></div>
+        <div class="qcar-flag" id="qcarFlag"></div>
         <div class="qcar-dots" id="qcarDots"></div>
       </div>
   </div>
@@ -948,7 +950,8 @@ window.addEventListener('load',setNavTop);
 // rotating partner-story quote carousel
 const STORIES=[
   {color:"#0070AD", name:"Capgemini", text:"Capgemini helps clients across industries focus on Critical Data Elements: 2% of the data estate, 98% of the metadata value. It's those 1,000-2,000 CDEs that most deserve the 360° view across glossary, synonyms, rules, classification, lineage, policy, ownership — the semantic foundation that grounds trusted AI on the Alation AIOS.", author:"Ralf Teschner", role:"Global Data Trust Lead, Capgemini"},
-  {color:"#D04A02", name:"PwC", text:"PwC Canada has been helping financial institutions navigate complex regulatory change for decades. This partnership builds on our existing technology capabilities by accelerating how we operationalize that expertise at scale on the Alation AIOS — bringing proven, AI-ready solutions to new industries and evolving regulatory frameworks.", author:"Prithviraj Thakur", role:"Partner & Data Management Practice Lead, PwC Canada"}
+  {color:"#D04A02", name:"PwC", text:"PwC Canada has been helping financial institutions navigate complex regulatory change for decades. This partnership builds on our existing technology capabilities by accelerating how we operationalize that expertise at scale on the Alation AIOS — bringing proven, AI-ready solutions to new industries and evolving regulatory frameworks.", author:"Prithviraj Thakur", role:"Partner & Data Management Practice Lead, PwC Canada"},
+  {color:"#A100FF", name:"Accenture", text:"Enterprises don't want AI experiments — they want reinvention that holds up in production. On the Alation AIOS, we scale trusted, governed data across every industry so our clients' agents act on knowledge they can defend.", author:"Tony Cyriac", role:"Chief AI & Data Officer, Accenture", flag:"Illustrative — draft, pending approval"}
 ];
 let qi=0, qTimer=null;
 function showStory(i){
@@ -962,6 +965,7 @@ function showStory(i){
   const lg=document.getElementById('qcarLogo'); lg.style.background=s.color; lg.innerHTML=LOGOS[s.name]||'';
   document.getElementById('qcarName').textContent=s.author;
   document.getElementById('qcarRole').textContent=s.role;
+  const _fl=document.getElementById('qcarFlag'); _fl.textContent=s.flag||''; _fl.style.display=s.flag?'inline-block':'none';
   document.getElementById('qcarDots').innerHTML=STORIES.map((_,k)=>'<i class="'+(k===qi?'on':'')+'" onclick="goStory('+k+')"></i>').join('');
   void car.offsetWidth;
   requestAnimationFrame(()=>car.classList.add('in'));

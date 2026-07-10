@@ -122,10 +122,11 @@
   .qslide.in blockquote .w{opacity:1;transform:translateY(0);filter:blur(0)}
   .qslide.in .attrib{opacity:1;transform:translateY(0);transition-delay:.35s}
   @keyframes qfloat{0%,100%{transform:translate(0,0)}50%{transform:translate(22px,-16px)}}
+  .qslide .qflag{display:inline-block;margin-top:18px;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.16);border:1px dashed rgba(255,255,255,.5);padding:6px 13px;border-radius:999px}
 </style>
 </head>
 <body>
-<div class="versionbar"><b>PROTOTYPE</b> · v0.25 · Jul 6 2026 — concept for discussion only, not an official Alation page</div>
+<div class="versionbar"><b>PROTOTYPE</b> · v0.26 · Jul 6 2026 — concept for discussion only, not an official Alation page</div>
 <header class="nav">
   <div class="nav-inner">
     <a class="logo" href="index.html"><span class="dot"></span>Alation <span class="aios">AIOS™</span></a>
@@ -230,6 +231,7 @@ const PARTNERS={
     quoteSrc:"Illustrative positioning",
     proof:[{t:"2+ accelerators",d:"Co-built solutions in progress across priority verticals."},{t:"Executive alignment",d:"Named-account plans with field co-sell motion."},{t:"Global reach",d:"Delivery across industries and geographies."}],
     ctas:[{label:"Become a partner",href:"index.html#join",primary:true},{label:"Explore the directory",href:"index.html#directory"}],
+    featuredQuote:{text:"Enterprises don't want AI experiments — they want reinvention that holds up in production. On the Alation AIOS, we scale trusted, governed data across every industry so our clients' agents act on knowledge they can defend.", author:"Tony Cyriac", role:"Chief AI & Data Officer", company:"Accenture", flag:"Illustrative — draft, pending approval"},
     related:["pwc","capgemini","snowflake"]
   },
   capgemini:{
@@ -348,7 +350,7 @@ function render(){
       <div class="wrap">
         <span class="qmark">&ldquo;</span>
         <blockquote>${words}</blockquote>
-        <div class="attrib"><div class="alogo" style="background:${p.color}">${LOGOS[p.name]||""}</div><div class="who"><strong>${fq.author}</strong><span>${fq.role}, ${fq.company}</span></div></div>
+        <div class="attrib"><div class="alogo" style="background:${p.color}">${LOGOS[p.name]||""}</div><div class="who"><strong>${fq.author}</strong><span>${fq.role}, ${fq.company}</span></div></div>${fq.flag?`<div class="qflag">${fq.flag}</div>`:""}
       </div>
     </section>`;
   } else {
