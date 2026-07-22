@@ -226,7 +226,7 @@
   .vmeta .vsi b{color:var(--slate)}
   .vaccel{font-size:12px;font-weight:700;color:var(--orange);background:var(--orange-soft);border:1px solid #FFD2B8;border-radius:999px;padding:5px 12px;white-space:nowrap}
   /* tiers / become a partner */
-  .tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:38px;align-items:stretch}
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px;align-items:stretch}
   @media(max-width:1040px){.tiers{grid-template-columns:1fr 1fr}}
   @media(max-width:560px){.tiers{grid-template-columns:1fr}}
   .tier{border:1px solid var(--line);border-radius:18px;padding:26px;background:#fff;display:flex;flex-direction:column;position:relative}
@@ -354,8 +354,8 @@
 </head>
 <body>
 
-<!-- VERSION: bump on each update (v0.27 adds legacy ecosystem wall; redeploy) -->
-<div class="versionbar"><b>PROTOTYPE</b> · v0.27 · Jul 15 2026 — concept for discussion only, not an official Alation page</div>
+<!-- VERSION: bump on each update (v0.28 three-tier model + per-tier ACU economics; redeploy) -->
+<div class="versionbar"><b>PROTOTYPE</b> · v0.28 · Jul 22 2026 — concept for discussion only, not an official Alation page</div>
 
 <header class="nav">
   <div class="wrap nav-inner">
@@ -466,7 +466,7 @@
           <div class="logo-sq" style="background:#2E2E38" data-logo="EY"></div>
           <div>
             <h3>EY</h3>
-            <span class="csrole">Premier candidate · Risk &amp; regulatory advisory</span>
+            <span class="csrole">Strategic candidate · Risk &amp; regulatory advisory</span>
           </div>
         </div>
         <p>Regulatory and risk advisory engagements aligned to named accounts, on a pathway to Preferred. Joint accelerators in scoping now.</p>
@@ -729,6 +729,20 @@
       </div>
       <p class="illus">Illustrative — one ACU pool powers usage across the platform. Specifics are covered in partner enablement.</p>
     </div>
+    <div class="vgrid" style="margin-top:28px;grid-template-columns:repeat(3,1fr)">
+      <div class="vcard"><div class="vbody">
+        <p class="voutcome"><b>Strategic — build &amp; resell.</b> SIs co-build accelerators on the AIOS™ and carry pools of ACUs across their engagements — prime the delivery, share the engine.</p>
+        <div class="vmeta"><p class="vsi">One pool, <b>three ways in</b></p><span class="vaccel">SI economics</span></div>
+      </div></div>
+      <div class="vcard"><div class="vbody">
+        <p class="voutcome"><b>Premier — integrate &amp; transact.</b> Hyperscalers and the technology ecosystem drive ACU consumption through marketplaces, co-sell, and deep platform integrations.</p>
+        <div class="vmeta"><p class="vsi">AWS · Microsoft · Databricks &amp; ecosystem</p><span class="vaccel">Marketplace economics</span></div>
+      </div></div>
+      <div class="vcard"><div class="vbody">
+        <p class="voutcome"><b>Select — refer &amp; amplify.</b> The wider community registers deals, refers opportunities, and amplifies the AIOS™ story — growing with the network as it compounds.</p>
+        <div class="vmeta"><p class="vsi">Community &amp; fans</p><span class="vaccel">Referral economics</span></div>
+      </div></div>
+    </div>
     <div class="flywheel">
       <div class="fw"><div class="fwn">1</div><h4>Partners build</h4><p>SIs & technology partners co-build accelerators and agentic solutions on the AIOS™.</p></div>
       <div class="fwarrow">→</div>
@@ -760,61 +774,50 @@
 <section class="section" id="tiers" style="background:var(--bg-soft)">
   <div class="wrap">
     <div style="text-align:center;max-width:680px;margin:0 auto 6px">
-      <span class="eyebrow">SI partner tiering · FY27</span>
-      <h2>Four tiers. Clear path to Preferred.</h2>
-      <p class="muted">Partners know where they stand — and what it takes to progress. Entry and exit criteria signal where Alation is making structural bets, anchored by our Strategic Preferred SIs.</p>
+      <span class="eyebrow">Partner tiers · FY27</span>
+      <h2>Three tiers. Clear roles. One engine.</h2>
+      <p class="muted">Every partner has a defined role in the AIOS™ ecosystem — and a clear way to grow with it. Anchored by our Strategic Preferred SIs, with hyperscalers and the technology ecosystem as Premier partners.</p>
     </div>
     <div class="tiers">
       <div class="tier feat">
         <span class="ribbon">Preferred</span>
         <div class="ticon t-strategic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 3h14l3 5-10 13L2 8z"/></svg></div>
         <h3>Strategic</h3>
-        <div class="sub">Global preferred SIs co-investing in the AIOS™</div>
+        <div class="sub">Global system integrators co-investing in the AIOS™</div>
         <div class="anchors"><span>Anchor partners</span>PwC · Accenture · Capgemini</div>
         <ul>
+          <li><span class="ck">✓</span> Co-built accelerators + ACU pool economics</li>
           <li><span class="ck">✓</span> Quarterly white-glove enablement</li>
-          <li><span class="ck">✓</span> 2+ verticals, 3+ accelerators</li>
-          <li><span class="ck">✓</span> Joint PR + co-marketing budget</li>
+          <li><span class="ck">✓</span> Joint PR, co-marketing + revAlation platform</li>
         </ul>
         <button class="btn btn-primary" onclick="document.getElementById('join').scrollIntoView()">Designation criteria</button>
       </div>
       <div class="tier">
         <div class="ticon t-premier"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l8 3v6c0 5-3.4 8.4-8 11-4.6-2.6-8-6-8-11V5z"/></svg></div>
         <h3>Premier</h3>
-        <div class="sub">Proven delivery, on a pathway to Preferred</div>
-        <div class="anchors"><span>Candidates</span>Deloitte · EY (selective)</div>
+        <div class="sub">Hyperscalers &amp; the technology ecosystem</div>
+        <div class="anchors"><span>Anchor partners</span>AWS · Microsoft · Databricks · Snowflake · Salesforce · OpenAI</div>
         <ul>
-          <li><span class="ck">✓</span> Annual white-glove enablement</li>
-          <li><span class="ck">✓</span> 1+ verticals, 2 accelerators</li>
-          <li><span class="ck">✓</span> Limited co-marketing</li>
+          <li><span class="ck">✓</span> Joint launches &amp; marketplace GTM</li>
+          <li><span class="ck">✓</span> Deep platform integrations</li>
+          <li><span class="ck">✓</span> revAlation presence + co-marketing</li>
         </ul>
-        <button class="btn btn-ghost" onclick="document.getElementById('join').scrollIntoView()">Progression path</button>
+        <button class="btn btn-ghost" onclick="document.getElementById('join').scrollIntoView()">Partner with us</button>
       </div>
       <div class="tier">
         <div class="ticon t-select"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6 6.6.6-5 4.3 1.6 6.5L12 16.9 5.9 19.4 7.5 13.5l-5-4.3 6.6-.6z"/></svg></div>
         <h3>Select</h3>
-        <div class="sub">Focused boutique &amp; regional delivery</div>
-        <div class="anchors"><span>Active</span>Slalom · Archetype Consulting</div>
+        <div class="sub">The community — SIs, boutiques &amp; resellers growing with AIOS™</div>
+        <div class="anchors"><span>Includes</span>Deloitte · EY · Slalom · Archetype &amp; the wider network</div>
         <ul>
-          <li><span class="ck">✓</span> Self-serve + onboarding session</li>
-          <li><span class="ck">✓</span> 1 vertical, 1 accelerator</li>
-          <li><span class="ck">✓</span> Joint blog or case study</li>
+          <li><span class="ck">✓</span> Program updates + AIOS™ webinar series</li>
+          <li><span class="ck">✓</span> revAlation access with tiered ticket allocations</li>
+          <li><span class="ck">✓</span> Speaking-slot submissions + deal registration</li>
         </ul>
         <button class="btn btn-ghost" onclick="document.getElementById('join').scrollIntoView()">How to qualify</button>
       </div>
-      <div class="tier">
-        <div class="ticon t-emerging"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l7 7h-4v9H9v-9H5z"/></svg></div>
-        <h3>Emerging</h3>
-        <div class="sub">Inbound &amp; regional boutiques</div>
-        <div class="anchors"><span>Assessed quarterly</span>New &amp; regional partners</div>
-        <ul>
-          <li><span class="ck">✓</span> Self-serve enablement</li>
-          <li><span class="ck">✓</span> 1 use case scoped</li>
-          <li><span class="ck">✓</span> Partner demo webinar</li>
-        </ul>
-        <button class="btn btn-ghost" onclick="document.getElementById('join').scrollIntoView()">Get started</button>
-      </div>
     </div>
+    <p class="muted" style="text-align:center;margin-top:22px;font-size:13px">New and inbound partners are assessed quarterly and curated into a tier — applications always open.</p>
   </div>
 </section>
 
@@ -873,19 +876,19 @@
 
 <script>
 const partners = [
-  {name:"OpenAI", type:"tech", color:"#10A37F", abbr:"O", desc:"Launch plugin partner for OpenAI Codex. Alation brings trusted data, governed metadata, and clear context directly into Codex — so AI agents work from your organization's knowledge, not guesswork.", tags:["AI Model Provider","Codex Plugin","Knowledge Layer"], ind:["Cross Industry","Technology","Financial Services"], ai:true, quote:"AI agents are only as good as the context they can access — Alation is the knowledge layer for AI."},
-  {name:"Snowflake", type:"tech", color:"#29B5E8", abbr:"❄", desc:"Deep data governance integration and self-service analytics on the Snowflake Data Cloud.", tags:["Cloud Data Platform","Governance"], ind:["Financial Services","Retail and Consumer Goods","Healthcare"], ai:true, quote:"Alation makes it fast and easy to govern critical data in Snowflake. — Sunny Bedi, CIO & CDO"},
-  {name:"Databricks", type:"tech", color:"#FF3621", abbr:"D", desc:"Make all data ready for analytics and rapidly adopt machine learning across the organization.", tags:["Lakehouse","ML/AI"], ind:["Technology","Telecommunications","Media"], ai:true, quote:"Empower data-driven decisions and adopt ML to outpace the competition."},
-  {name:"AWS", type:"tech", color:"#FF9900", abbr:"a", desc:"Accelerate data intelligence and drive better insights leveraging Alation on AWS.", tags:["Cloud","Data Modernization"], ind:["Cross Industry","Financial Services","Technology"], ai:true, quote:"We are delighted to help customers accelerate data intelligence. — Ken Chestnut, AWS"},
-  {name:"Salesforce", type:"tech", color:"#00A1E0", abbr:"☁", desc:"Unify CRM enterprise metadata, giving Data Cloud users access to metadata from 100+ systems.", tags:["CRM","Connector"], ind:["Retail and Consumer Goods","Financial Services","Media"], ai:true, quote:"Bring metadata from 100+ systems into Salesforce Data Cloud."},
-  {name:"Tableau", type:"tech", color:"#1F77B4", abbr:"T", desc:"Best-in-class visualization powered by trusted, governed data from the Alation catalog.", tags:["Analytics","Visualization"], ind:["Retail and Consumer Goods","Healthcare"], ai:false, quote:""},
-  {name:"Microsoft Azure", type:"tech", color:"#0078D4", abbr:"⊞", desc:"Govern and discover data across Azure data services with active metadata.", tags:["Cloud","Governance"], ind:["Technology","Telecommunications"], ai:true, quote:""},
-  {name:"dbt Labs", type:"tech", color:"#FF694B", abbr:"d", desc:"Pipeline and transformation lineage that ensures the right data gets moved and trusted.", tags:["Transformation","Lineage"], ind:["Technology"], ai:false, quote:""},
+  {name:"OpenAI", type:"tech", tier:"Premier", color:"#10A37F", abbr:"O", desc:"Launch plugin partner for OpenAI Codex. Alation brings trusted data, governed metadata, and clear context directly into Codex — so AI agents work from your organization's knowledge, not guesswork.", tags:["AI Model Provider","Codex Plugin","Knowledge Layer"], ind:["Cross Industry","Technology","Financial Services"], ai:true, quote:"AI agents are only as good as the context they can access — Alation is the knowledge layer for AI."},
+  {name:"Snowflake", type:"tech", tier:"Premier", color:"#29B5E8", abbr:"❄", desc:"Deep data governance integration and self-service analytics on the Snowflake Data Cloud.", tags:["Cloud Data Platform","Governance"], ind:["Financial Services","Retail and Consumer Goods","Healthcare"], ai:true, quote:"Alation makes it fast and easy to govern critical data in Snowflake. — Sunny Bedi, CIO & CDO"},
+  {name:"Databricks", type:"tech", tier:"Premier", color:"#FF3621", abbr:"D", desc:"Make all data ready for analytics and rapidly adopt machine learning across the organization.", tags:["Lakehouse","ML/AI"], ind:["Technology","Telecommunications","Media"], ai:true, quote:"Empower data-driven decisions and adopt ML to outpace the competition."},
+  {name:"AWS", type:"tech", tier:"Premier", color:"#FF9900", abbr:"a", desc:"Accelerate data intelligence and drive better insights leveraging Alation on AWS.", tags:["Cloud","Data Modernization"], ind:["Cross Industry","Financial Services","Technology"], ai:true, quote:"We are delighted to help customers accelerate data intelligence. — Ken Chestnut, AWS"},
+  {name:"Salesforce", type:"tech", tier:"Premier", color:"#00A1E0", abbr:"☁", desc:"Unify CRM enterprise metadata, giving Data Cloud users access to metadata from 100+ systems.", tags:["CRM","Connector"], ind:["Retail and Consumer Goods","Financial Services","Media"], ai:true, quote:"Bring metadata from 100+ systems into Salesforce Data Cloud."},
+  {name:"Tableau", type:"tech", tier:"Premier", color:"#1F77B4", abbr:"T", desc:"Best-in-class visualization powered by trusted, governed data from the Alation catalog.", tags:["Analytics","Visualization"], ind:["Retail and Consumer Goods","Healthcare"], ai:false, quote:""},
+  {name:"Microsoft Azure", type:"tech", tier:"Premier", color:"#0078D4", abbr:"⊞", desc:"Govern and discover data across Azure data services with active metadata.", tags:["Cloud","Governance"], ind:["Technology","Telecommunications"], ai:true, quote:""},
+  {name:"dbt Labs", type:"tech", tier:"Premier", color:"#FF694B", abbr:"d", desc:"Pipeline and transformation lineage that ensures the right data gets moved and trusted.", tags:["Transformation","Lineage"], ind:["Technology"], ai:false, quote:""},
   {name:"PwC", type:"si", tier:"Strategic", launch:true, color:"#D04A02", abbr:"pwc", desc:"Launch preferred SI. Co-built the E-21 regulatory accelerator (Agent Studio + FSI Glossary + Policy Pack) for Canadian and US banking — with E-23 to follow.", tags:["Launch Partner","FSI","E-21 Accelerator"], ind:["Financial Services","Healthcare"], ai:true, quote:"Joint Alation + PwC E-21 solution: 70%+ reduction in manual compliance effort with full CDE traceability for OSFI."},
   {name:"Accenture", type:"si", tier:"Strategic", launch:true, color:"#A100FF", abbr:"›", desc:"Launch preferred SI. Global co-sell across Financial Services, Healthcare, Retail and Consumer Goods, and Travel & Transportation with vertical accelerators and exec alignment.", tags:["Launch Partner","AI Transformation","Healthcare"], ind:["Financial Services","Healthcare","Retail and Consumer Goods","Travel & Transportation","Cross Industry"], ai:true, quote:"JBP in progress — 2+ accelerators, field co-sell, executive alignment across CNA, Truist, NFCU and Vistra."},
   {name:"Capgemini", type:"si", tier:"Strategic", launch:true, color:"#0070AD", abbr:"C", desc:"Launch preferred SI. A cross-industry offering deployed worldwide — data governance, DORA / financial resilience, and Retail/CPG accelerators built on the AIOS™.", tags:["Launch Partner","Cross-Industry","Worldwide"], ind:["Cross Industry","Financial Services","Retail and Consumer Goods","Travel & Transportation"], ai:true, quote:"Activating H1 FY27 — cross-industry accelerators and a global go-to-market under the AIOS™ narrative."},
-  {name:"Deloitte", type:"si", tier:"Premier", color:"#86BC25", abbr:"D", desc:"Premier candidate. Strategy, change management, and implementation services on a pathway to Preferred designation.", tags:["Premier","Consulting","Data Strategy"], ind:["Financial Services","Healthcare","Cross Industry"], ai:true, quote:""},
-  {name:"EY", type:"si", tier:"Premier", color:"#2E2E38", abbr:"EY", desc:"Premier candidate (selective). Regulatory and risk advisory engagements aligned to named accounts.", tags:["Premier","Risk Advisory"], ind:["Financial Services","Cross Industry"], ai:false, quote:""},
+  {name:"Deloitte", type:"si", tier:"Select", color:"#86BC25", abbr:"D", desc:"Strategic-track candidate. Strategy, change management, and implementation services on a pathway to Strategic designation.", tags:["Consulting","Data Strategy"], ind:["Financial Services","Healthcare","Cross Industry"], ai:true, quote:""},
+  {name:"EY", type:"si", tier:"Select", color:"#2E2E38", abbr:"EY", desc:"Strategic-track candidate (selective). Regulatory and risk advisory engagements aligned to named accounts.", tags:["Risk Advisory"], ind:["Financial Services","Cross Industry"], ai:false, quote:""},
   {name:"Slalom", type:"si", tier:"Select", color:"#0C62FB", abbr:"S", desc:"Select partner — Healthcare practice active. Certified delivery driving self-service analytics and data culture adoption.", tags:["Select","Healthcare","Enablement"], ind:["Retail and Consumer Goods","Healthcare"], ai:false, quote:""},
   {name:"Archetype Consulting", type:"si", tier:"Select", color:"#1A4FA0", abbr:"A", desc:"Select partner. Focused boutique delivery with a signed co-sell agreement and scoped accelerator.", tags:["Select","Boutique"], ind:["Financial Services","Healthcare"], ai:false, quote:""},
 ];
